@@ -1,0 +1,64 @@
+{
+    "102":{
+            "name": "Ygritte",
+            "age" : 19,
+            "height": 172,
+            "weight": 73,
+            "avatar" : "http://41.media.tumblr.com/49a273cbfd8686b4a236fce9eb4b73ef/tumblr_njc6ejvbPA1tjq0j9o1_500.jpg"
+        },
+    "103":{
+            "name": "Jon Snow",
+            "age" : 14,
+            "height": 200,
+            "weight": 200,
+            "avatar" : "http://dispositiv.uni-bayreuth.de/wp-content/uploads/2014/06/jon-snow.jpg"
+        },
+    
+    "107":{
+            "name": "Aria",
+            "age" : 10,
+            "height": 200,
+            "weight": 200,
+            "avatar" : "http://images5.fanpop.com/image/photos/31100000/Arya-arya-stark-31112801-500-650.png"
+        },
+
+    "113":{
+            "name": "Sansa",
+            "age" : 12,
+            "height": 200,
+            "weight": 200,
+            "avatar" : "https://s-media-cache-ak0.pinimg.com/736x/75/24/40/7524406913406f48bea6a335ca653fa0.jpg"
+        },
+
+    "133":{
+            "name": "Tyrion",
+            "age" : 34,
+            "height": 200,
+            "weight": 200,
+            "avatar" : "http://img3.wikia.nocookie.net/__cb20120316184837/gameofthrones/images/c/c3/TyrionEW.png"
+        },
+
+    "143":{
+            "name": "Jaime",
+            "age" : 34,
+            "height": 200,
+            "weight": 200,
+            "avatar" : "http://images1.wikia.nocookie.net/__cb20120316185645/gameofthrones/images/4/46/JaimeLannisterEW.png"
+        },
+
+    "152":{
+            "name": "Cersei",
+            "age" : 34,
+            "height": 200,
+            "weight": 200,
+            "avatar" : "http://www.fandomisinthedetails.com/uploads/1/9/2/0/19201953/9579294_orig.jpg?332"
+        },
+
+    "112":{
+            "name": "Bran",
+            "age" : 8,
+            "height": 200,
+            "weight": 200,
+            "avatar" : "http://images6.fanpop.com/image/photos/32300000/Game-of-Thrones-game-of-thrones-32364103-467-700.jpg"
+        }
+}

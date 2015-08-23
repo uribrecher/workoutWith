@@ -1,0 +1,9 @@
+<h1>trainers near you</h1>
+            
+<div class="row" ng-controller="TrainersListCtrl">
+    <div ng-repeat="trainer in trainers" class="col-lg-3 col-md-4 col-sm-6 col-xs-12 trainer-class">
+        <img class="img img-responsive" ng-src="{{trainer.image}}"/>
+        <a class="book-class btn btn-default btn-lg" href="#/book/{{trainer.$id}}">book now</button>
+        <a class='btn btn-link' href='#/trainers/{{trainer.$id}}'>{{trainer.name}}</a>
+    </div>
+</div>

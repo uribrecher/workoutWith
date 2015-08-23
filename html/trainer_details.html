@@ -1,0 +1,29 @@
+<h1>{{trainer.name}}</h1>
+<div class="row">
+    <div class="col-md-12">
+        <ul class="nav nav-pills">
+          <li ng-repeat="type in trainer.types" role="presentation" class="active"><a href="#">{{type}}</a></li>
+        </ul>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <img ng-src="{{trainer.image}}" class="img img-thumbnail"/>
+    </div>
+    <div class="col-md-8">
+        {{trainer.details}}
+    </div>
+</div>
+<h2>Reviews</h2>
+<div class="row" ng-repeat="review in reviews">
+    <div class="col-md-2">
+        <img ng-src="{{get_trainee_object(review.trainee_id).avatar}}" class="img img-circle" width="100" height="100" />
+    </div>
+    <div class="col-md-2">
+        <rating ng-model="review.trainee_feedback.rating" readonly="true" ></rating>
+    </div>
+    <div class="col-md-8">
+        {{review.trainee_feedback.details}}
+    </div>
+</div>

@@ -1,0 +1,26 @@
+<h1>booking form</h1>
+<div class="row">
+    <div class="col-xs-6">
+        <input type="date" class="form-control" ng-model="form_date" min-date="minDate" max-date="'2020-06-22'" ng-required="true" />
+    </div>
+    <div class="col-xs-6">
+        <input type="time" class="form-control" ng-model="form_time" ng-required="true" />
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+      <select class="form-control" id="sel1" ng-options="item for item in trainer.types" ng-model="meeting.workout">
+      </select>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        Meeting: {{meeting | json}}
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <button type="submit" class="btn btn-default" ng-click="create_meeting()">Book</button>
+    </div>
+</div>
+

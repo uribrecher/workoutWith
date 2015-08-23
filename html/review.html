@@ -1,0 +1,15 @@
+<h1>Review form</h1>
+hello {{trainee.name}}. please write a review for trainer: {{trainer.name}}<br>
+<div class="row">
+    <div class="col-md-2">
+        <rating ng-model="meeting.trainee_feedback.rating" readonly="false" ></rating>
+    </div>
+    <div class="col-md-10">
+        <input type="textarea" class="form-control" ng-model="meeting.trainee_feedback.details" ng-required="true" />
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <button type="submit" class="btn btn-default" ng-click="create_review()">Submit</button>
+    </div>
+</div>
