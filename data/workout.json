@@ -1,0 +1,111 @@
+{
+    "read-only":
+    {
+        "specialties_dictionary":
+        {
+            "cattlebells":
+            {
+                "symbol":"URL",
+                "description":"bla bla",
+                "cover_photo": "URL"
+            },
+
+            "bodyweight":
+            {
+            },
+
+            "yoga":
+            {
+            },
+
+            "functional":
+            {
+            },
+            
+            "TRX":
+            {
+            }
+        },
+        
+        "cities":
+        {
+            "New York":"",
+            "London":"",
+            "Berlin":"",
+            "Tel Aviv":"",
+            "Tokyo":"",
+            "Paris":"",
+            "Stockholm":"",
+            "Moscow":"",
+            
+        }
+    },
+    
+    "public_user_data":
+    {
+        "asdj23jsdfj345jg":
+        {
+            "name":"uri",
+            "avatar":"URL",
+        }
+    },
+
+    "private_trainee_data":
+    {
+        "asdj23jsdfj345jg":
+        {
+            "age":30,
+            "height":174,
+            "weight": 60.5,
+            "e-mail": ""
+        }
+    },
+
+    "public_trainer_data":
+    {
+        "asdj23jsdfj345jg":
+        {
+            "description": "bla bla bla",
+            "cover_photo": "URL",
+            "specialties": [],
+            "price_per_hour": 154,
+            "city": "tel-aviv"
+        }
+    },
+    
+    "private_trainer_data":
+    {
+        
+    },
+
+    "meetings":
+    {
+        "34234asdbasd03423":
+        {
+            "start_time":"",
+            "end_time":"",
+            "trainer_id":"abc",
+            "trainee_id":"def"
+        }
+    },
+    
+    "trainer_feedbacks":
+    {
+        "34234asdbasd03423":
+        {
+            "text": "bli bli",
+            "rating": 3.5,
+            "trainer-only-field": [3,4,5]
+        }
+    },
+    
+    "trainee_feedbacks":
+    {
+        "34234asdbasd03423":
+        {
+                "rating": 5,
+                "text": "bla bla"
+        }
+    }
+
+}

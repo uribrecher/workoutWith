@@ -1,9 +1,30 @@
-<h1>trainers near you</h1>
-            
-<div class="row" ng-controller="TrainersListCtrl">
-    <div ng-repeat="trainer in trainers" class="col-lg-3 col-md-4 col-sm-6 col-xs-12 trainer-class">
-        <img class="img img-responsive" ng-src="{{trainer.image}}"/>
-        <a class="book-class btn btn-default btn-lg" href="#/book/{{trainer.$id}}">book now</button>
-        <a class='btn btn-link' href='#/trainers/{{trainer.$id}}'>{{trainer.name}}</a>
+<header background-image-directive="{{jumbo_image}}">
+    <ng-include src="'html/nav_bar.html'">
+    </ng-include>
+    <div class="jumbotron">
+        <h1>WorkshopWith</h1>
+        <div id="search-bar" class="input-group">
+            <input type="text" class="form-control" ng-model="city" placeholder="city"/>
+            <span class="input-group-btn" style="width:0px;"></span>
+            <input type="date" class="form-control" ng-model="checkin" placeholder="check-in" style="margin-left:-1px" />
+            <span class="input-group-btn" style="width:0px;"></span>
+            <input type="date" class="form-control" ng-model="checkout" placeholder="check-out" style="margin-left:-2px" />
+            <div class="input-group-btn">
+                <button class="btn btn-default" type="button">SEARCH</button>
+            </div>
+        </div>
+    </div>
+</header>
+    
+<div class="container">
+    <div class="row" ng-controller="TrainersListCtrl">
+        <div ng-repeat="trainer in trainers" class="col-lg-3 col-md-4 col-sm-6 col-xs-12 trainer-class">
+            <div class="stretchy-wrapper">
+                <div background-image-directive="{{trainer.image}}">
+                </div>
+            </div>
+            <a class="book-class btn btn-default btn-lg" ng-href="book/{{trainer.$id}}">book now</a>
+            <a class='btn btn-link' ng-href='trainers/{{trainer.$id}}'>{{trainer.name}}</a>
+        </div>
     </div>
 </div>

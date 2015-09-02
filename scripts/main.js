@@ -2,169 +2,136 @@
 (function () {
     'use strict';
 
-    var domain = "https://workshopwith.firebaseio.com";
     var mainApp = angular.module('mainApp', ['ngRoute', 'firebase', 'ui.bootstrap']);
 
-    mainApp.run(["$rootScope", "$location", function($rootScope, $location) {
-        $rootScope.$on("$routeChangeError", function(event, next, previous, error) {
-            // We can catch the error thrown when the $requireAuth promise is rejected
-            // and redirect the user back to the home page
-            if (error === "AUTH_REQUIRED") {
-                $location.path("/trainers");
-            }
+    mainApp.constant("domain", "https://workshopwith.firebaseio.com");
+    
+    function auth_service($firebaseAuth, $firebaseArray, $modal, domain) {
+        var ref = new Firebase(domain);
+        var fb_auth = $firebaseAuth(ref);
+        this.login = function (provider_name) {
+            fb_auth.$authWithOAuthPopup(provider_name, {scope: "email"});
+        };
+        this.logout = function () {
+            fb_auth.$unauth();
+        };
+        
+        this.get_auth_object = function () {
+            return fb_auth;
+        };
+        this.open_auth_modal = function () {
+            var modalInstance = $modal.open(
+                {
+                    animation: true,
+                    templateUrl: 'html/login_dialog.html',
+                    controller: 'AuthModalCtrl',
+                    size: 'sm'
+                });    
+        };
+        
+        
+        this.add_user = function(uid, user_object) {
+            var user_ref = new Firebase(domain).child("users").child(uid);
+            user_ref.transaction(function(current_data) {
+                if (current_data === null) {
+                    return user_object;
+                }
+                else {
+                    console.log('user ' + uid + ' already exists');
+                    return;
+                }
+            }, function(error,committed,snapshot) {
+                if (error) {
+                    console.log('add_uaer transaction failed abnormally!', error);
+                } else if (!committed) {
+                    console.log('user already exists, transaction aborted');
+                } else {
+                    console.log('User added!');
+                }
+                console.log("user's data: ", snapshot.val());
+            });
+        };
+    };
+    
+    mainApp.service("auth_service", ['$firebaseAuth', '$firebaseArray', '$modal', 'domain', auth_service]);
+  
+    mainApp.directive('backgroundImageDirective', function () {
+        return function (scope, element, attrs) {
+            element.css({
+                'background-image': 'url(' + attrs.backgroundImageDirective + ')',
+                'background-repeat': 'no-repeat',
+                'background-position': 'center',
+                'background-attachment': 'scroll',
+                'background-size': 'cover',
+                'min-height': attrs.minHeight
+            });
+        };
+    });
+    
+    mainApp.run(["$rootScope", "$location", "auth_service",
+        function($rootScope, $location, auth_service) {
+            $rootScope.$on("$routeChangeError", function(event, next, previous, error) {
+                // We can catch the error thrown when the $requireAuth promise is rejected
+                // and redirect the user back to the home page
+                if (error === "AUTH_REQUIRED") {
+                    auth_service.open_auth_modal();
+                }
         });
     }]);
     
-    mainApp.factory("Auth", ['$firebaseAuth',
-        function($firebaseAuth) {
-            var ref = new Firebase(domain);
-            return $firebaseAuth(ref);
-        }]);
     
-    mainApp.config(['$routeProvider',
-      function($routeProvider) {
+    mainApp.config(['$routeProvider', '$locationProvider',
+      function($routeProvider, $locationProvider) {
+        
+          var require_auth = {
+                "currentAuth": ["auth_service", function(auth_service) {
+                    return auth_service.get_auth_object().$requireAuth();
+                }]
+          };
+
+          var wait_for_auth = {
+                "currentAuth": ["auth_service", function(auth_service) {
+                    return auth_service.get_auth_object().$waitForAuth();
+                }]
+          };
+
+          
+        $locationProvider.html5Mode(true);  
         $routeProvider.
           when('/trainers', {
             templateUrl: 'html/trainers.html',
-            controller: 'TrainersListCtrl'
+            controller: 'TrainersListCtrl',
+            resolve: wait_for_auth
+          }).
+          when('/sign_up', {
+            templateUrl: 'html/sign_up.html',
+            controller: 'SignUpCtrl',
+            resolve: wait_for_auth
+          }).
+          when('/create_trainer', {
+            templateUrl: 'html/trainer_form.html',
+            controller: 'TrainerFormCtrl',
+            resolve: require_auth
           }).
           when('/trainers/:id', {
             templateUrl: 'html/trainer_details.html',
-            controller: 'TrainerDetailCtrl'
+            controller: 'TrainerDetailCtrl',
+            resolve: wait_for_auth
           }).
           when('/book/:id', {
             templateUrl: 'html/booking.html',
             controller: 'BookingCtrl',
-            resolve: {
-                "currentAuth": ["Auth", function(Auth) {
-                    return Auth.$requireAuth();
-                }]
-            }
+            resolve: require_auth
           }).
           when('/review/:id', {
             templateUrl: 'html/review.html',
-            controller: 'ReviewCtrl'
+            controller: 'ReviewCtrl',
+            resolve: require_auth
           }).
           otherwise({
-            redirectTo: '/trainers'
+            redirectTo: 'trainers'
           });
       }]);
 
-    mainApp.controller('NavCtrl', ['$scope','$firebaseAuth', 'Auth',
-        function($scope, $firebaseAuth, Auth) {
-            $scope.auth = Auth;
-            
-            $scope.auth.$onAuth(function(authdata) {
-                $scope.authdata = authdata;
-                if (authdata)
-                {
-                    $scope.avatar = authdata.google.profileImageURL;
-                    $scope.username = authdata.google.displayName;
-                }
-            });
-       
-            $scope.login = function(provider_name) {
-                // TODO: open modal and choose google or facebook
-                $scope.auth.$authWithOAuthPopup(provider_name,{scope:"email"});
-            };
-        
-            $scope.logout = function() {
-                $scope.auth.$unauth();
-            };
-        
-        }]);
-
-    mainApp.controller('TrainerDetailCtrl', ['$scope', '$routeParams', '$firebaseObject', '$firebaseArray' ,
-      function($scope, $routeParams, $firebaseObject, $firebaseArray) {
-          var ref = new Firebase(domain + "/trainers/" + $routeParams.id);
-          var meetings_ref = new Firebase(domain + "/meetings/");
-          var trainees_ref = new Firebase(domain + "/trainees/");
-          $scope.trainer = $firebaseObject(ref);
-          $scope.reviews = $firebaseArray(meetings_ref.orderByChild("trainer_id").equalTo($routeParams.id));
-          $scope.trainees = $firebaseArray(trainees_ref);
-
-          $scope.get_trainee_object = function(trainee_id) {
-              return $scope.trainees.$getRecord(trainee_id);
-          };
-
-      }]);
-
-    mainApp.controller('TrainersListCtrl', 
-                       ['$scope', '$firebaseArray',
-       function ($scope, $firebaseArray) {
-          var ref = new Firebase(domain + "/trainers");
-          $scope.trainers = $firebaseArray(ref);
-    }]);
-
-
-    mainApp.controller('BookingCtrl', 
-                       ['$scope', '$routeParams', '$firebaseObject', '$firebaseArray', '$location',
-       function ($scope, $routeParams, $firebaseObject, $firebaseArray, $location) {
-
-           $scope.master_meeting = 
-                        {
-                            "trainer_id": $routeParams.id,
-                            "trainee_id": "103",
-                            "location": "abc",
-                            "workout": "",
-                            "trainer_feedback": {
-                                "rating": 0,
-                                "details": "fill in"
-                            },
-                            "trainee_feedback": {
-                                "rating": 0,
-                                "details": "fill in"
-                            }
-                        };
-           $scope.meeting = angular.copy($scope.master_meeting);
-
-           var ref = new Firebase(domain + "/trainers/" + $scope.master_meeting.trainer_id);
-           var meetings_ref = new Firebase(domain + "/meetings");
-           var trainee_ref = new Firebase(domain + "/trainees" + $scope.master_meeting.trainee_id);
-
-
-           $scope.trainer = $firebaseObject(ref);
-           $scope.trainee = $firebaseObject(trainee_ref);
-           $scope.meetings = $firebaseArray(meetings_ref);
-
-           $scope.form_date = new Date();
-           $scope.form_time = new Date();
-
-           $scope.create_meeting = function() {
-                $scope.meeting.start = new Date($scope.form_date.getYear(),
-                                        $scope.form_date.getMonth(),
-                                        $scope.form_date.getDate(),
-                                        $scope.form_time.getHours(),
-                                        $scope.form_time.getMinutes(),
-                                        $scope.form_time.getSeconds(),
-                                        0);
-                $scope.meeting.end = new Date($scope.meeting.start + new Date(0,0,0,1,0,0,0));                    
-                $scope.meetings.$add($scope.meeting).then(function(ref) {
-                    var debug = ref.key();
-                    $location.path('/review/' + ref.key());
-                });
-           }
-    }]);
-
-    mainApp.controller('ReviewCtrl', 
-                       ['$scope', '$routeParams', '$firebaseObject', '$firebaseArray', '$location',
-       function ($scope, $routeParams, $firebaseObject, $firebaseArray, $location) {
-
-           var meeting_ref = new Firebase(domain + "/meetings").child($routeParams.id);
-           var meeting = $firebaseObject(meeting_ref);
-           meeting.$bindTo($scope,"meeting");
-
-           meeting.$loaded().then(function(data) {
-               var trainer_ref = new Firebase(domain + "/trainers").child(data.trainer_id);
-               var trainee_ref = new Firebase(domain + "/trainees").child(data.trainee_id);
-
-               $scope.trainer = $firebaseObject(trainer_ref);
-               $scope.trainee = $firebaseObject(trainee_ref);       
-           });
-
-           $scope.create_review = function() {
-               $location.path('/trainers');
-           }
-    }]);
 })();
 

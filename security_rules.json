@@ -1,0 +1,12 @@
+{
+    "rules": {
+      "read-only": {
+        ".read": true,
+        ".write": false
+      },
+      "$other": {
+        ".read": true,
+        ".write": true
+      }
+    }
+}

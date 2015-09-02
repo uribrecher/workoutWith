@@ -1,3 +1,10 @@
+<ng-include src="'html/nav_bar.html'">
+</ng-include>
+<div ng-if="trainer_loaded" background-image-directive="{{trainer.image}}" min-height="300px">
+    <div class="jumbotron">
+    </div>
+</div>
+
 <h1>{{trainer.name}}</h1>
 <div class="row">
     <div class="col-md-12">
@@ -8,10 +15,7 @@
 </div>
 
 <div class="row">
-    <div class="col-md-4">
-        <img ng-src="{{trainer.image}}" class="img img-thumbnail"/>
-    </div>
-    <div class="col-md-8">
+    <div class="col-md-12">
         {{trainer.details}}
     </div>
 </div>
