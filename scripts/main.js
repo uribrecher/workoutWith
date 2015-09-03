@@ -118,18 +118,13 @@
             controller: 'TrainerDetailCtrl',
             resolve: wait_for_auth
           }).
-          when('/book/:id', {
-            templateUrl: 'html/booking.html',
-            controller: 'BookingCtrl',
-            resolve: require_auth
-          }).
           when('/review/:id', {
             templateUrl: 'html/review.html',
             controller: 'ReviewCtrl',
             resolve: require_auth
           }).
           otherwise({
-            redirectTo: 'trainers'
+            redirectTo: 'html/404.html'
           });
       }]);
 

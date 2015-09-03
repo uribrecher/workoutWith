@@ -1,8 +1,6 @@
 <ng-include src="'html/nav_bar.html'">
 </ng-include>
 <div ng-if="trainer_loaded" background-image-directive="{{trainer.image}}" min-height="300px">
-    <div class="jumbotron">
-    </div>
 </div>
 
 <h1>{{trainer.name}}</h1>
@@ -15,8 +13,15 @@
 </div>
 
 <div class="row">
-    <div class="col-md-12">
+    <div class="col-md-8">
         {{trainer.details}}
+    </div>
+    <div class="col-md-4" ng-controller="BookingCtrl">
+        <input type="date" class="form-control" ng-model="form_date" min-date="minDate" max-date="'2020-06-22'" ng-required="true" />
+        <input type="time" class="form-control" ng-model="form_time" ng-required="true" />
+        <select class="form-control" id="sel1" ng-options="item for item in trainer.types" ng-model="meeting.workout">
+        </select>
+        <button type="submit" class="btn btn-default" ng-click="create_meeting()">Book</button>   
     </div>
 </div>
 <h2>Reviews</h2>
