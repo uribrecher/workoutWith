@@ -5,9 +5,11 @@
                                          ['$scope', '$routeParams', '$firebaseObject', '$firebaseArray' ,
                                           'domain',
       function($scope, $routeParams, $firebaseObject, $firebaseArray,domain) {
-          var ref = new Firebase(domain + "/trainers/" + $routeParams.id);
-          var meetings_ref = new Firebase(domain + "/meetings/");
-          var trainees_ref = new Firebase(domain + "/trainees/");
+
+          var root_ref = new Firebase(domain);
+          var ref = root_ref.child("trainers").child($routeParams.id);
+          var meetings_ref = root_ref.child("meetings");
+          var trainees_ref = root_ref.child("users");
           $scope.trainer = $firebaseObject(ref);
           $scope.trainer_loaded = false;
           

@@ -29,28 +29,33 @@
                 });    
         };
         
-        
-        this.add_user = function(uid, user_object) {
-            var user_ref = new Firebase(domain).child("users").child(uid);
-            user_ref.transaction(function(current_data) {
-                if (current_data === null) {
-                    return user_object;
-                }
-                else {
-                    console.log('user ' + uid + ' already exists');
-                    return;
-                }
-            }, function(error,committed,snapshot) {
-                if (error) {
-                    console.log('add_uaer transaction failed abnormally!', error);
-                } else if (!committed) {
-                    console.log('user already exists, transaction aborted');
-                } else {
-                    console.log('User added!');
-                }
-                console.log("user's data: ", snapshot.val());
-            });
+        this.get_display_name = function(authdata) {
+            if (authdata.provider === 'google') {
+                return authdata.google.displayName;
+            }
+            else if (authdata.provider === 'facebook') {
+                return authdata.facebook.displayName;
+            }
         };
+        
+        this.get_email = function(authdata) {
+            if (authdata.provider === 'google') {
+                return authdata.google.email;
+            }
+            else if (authdata.provider === 'facebook') {
+                return authdata.facebook.email;
+            }
+        };
+        
+        this.get_avatar = function(authdata) {
+            if (authdata.provider === 'google') {
+                return authdata.google.profileImageURL;
+            }
+            else if (authdata.provider === 'facebook') {
+                return authdata.facebook.profileImageURL;
+            }
+        };
+        
     };
     
     mainApp.service("auth_service", ['$firebaseAuth', '$firebaseArray', '$modal', 'domain', auth_service]);
@@ -124,7 +129,7 @@
             resolve: require_auth
           }).
           otherwise({
-            redirectTo: 'html/404.html'
+            redirectTo: 'trainers'
           });
       }]);
 
