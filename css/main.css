@@ -1,18 +1,17 @@
 
-.trainer-class
-{
-    position: relative;
-    display: inline-block;
+a.fill-div {
+    display: block;
+    height: 100%;
+    width: 100%;
+    text-decoration: none;
 }
 
-.trainer-class .book-class
-{
-    opacity: 0.5;
+.info-div {
+    color: white;
     position: absolute;
-    top: 10px;
-    left: 30px;
+    bottom: 5px;
+    right: 5px;
 }
-
 
 .navbar-default .navbar-nav > li > a {
     color: dodgerblue;
@@ -30,14 +29,6 @@
     color: dodgerblue;
     background-color: transparent;    
 }
-
-/*header
-{
-    background-image: url("http://www.nathaliarenefitness.com/wp-content/uploads/2014/05/Nathalia.Rene_.Fitness.banner1.jpg");
-    background-position: center;
-    background-attachment: scroll;
-    background-size: cover;
-}*/
 
 #user-avatar
 {

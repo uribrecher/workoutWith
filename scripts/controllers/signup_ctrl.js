@@ -12,6 +12,13 @@
                var user_ref = new Firebase(domain).child('users').child(authdata.uid);
                $scope.user = $firebaseObject(user_ref);
                
+               $scope.user_loaded = false;
+          
+               $scope.user.$loaded(function() {
+                  $scope.user_loaded = true;
+               });
+          
+               
                $scope.user.$loaded().then(function(userdata) {
                     if (!userdata.birthday) {
                         userdata.birthday = new Date().toISOString();

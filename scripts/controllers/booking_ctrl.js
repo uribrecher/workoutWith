@@ -43,6 +43,10 @@
             });
            
            $scope.create_meeting = function() {
+                var authdata = $scope.auth.$getAuth();
+                if (!authdata) {
+                    auth_service.open_auth_modal();
+                }
                 var start_time = new Date($scope.form_date.getYear(),
                                         $scope.form_date.getMonth(),
                                         $scope.form_date.getDate(),

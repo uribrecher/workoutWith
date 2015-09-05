@@ -21,15 +21,21 @@
         <li ng-hide="authdata">
             <a href="" ng-click="open_auth_modal()">LOGIN</a>
         </li>
-        <li ng-show="authdata">
-            <a href="">
+        <li class="dropdown" ng-show="authdata">
+            <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                 <img id="user-avatar" ng-src="{{user.avatar}}" class="img-avatar img img-circle" width="30" height="30"/>
-                {{user.name}}
+                {{user.name}}<span class="caret"></span>
+                <ul class="dropdown-menu">
+                    <li><a href="" ng-click="settings()">settings</a></li>
+                    <li><a href="" ng-click="dashboard()">dashboard</a></li>
+                    <li><a href="" ng-click="profile()">profile</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li><a href="">payment</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li><a href="" ng-click="logout()">LOGOUT</a></li>
+                </ul>
             </a>
-        </li>
-        <li ng-show="authdata">
-            <a href="" ng-click="logout()">LOGOUT</a>
-        </li>
+        </li>          
       </ul>
     </div><!-- /.navbar-collapse -->
 </nav>

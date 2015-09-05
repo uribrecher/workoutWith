@@ -19,13 +19,17 @@
 <div class="container">
     <div class="row" ng-controller="TrainersListCtrl">
         <div ng-repeat="trainer in trainers" class="col-lg-3 col-md-4 col-sm-6 col-xs-12 trainer-class">
-            <!-- TODO: make picture clickable -->
-            <div class="stretchy-wrapper">
+            <div class="stretchy-wrapper" >
                 <div background-image-directive="{{trainer.image}}">
+                    <a class="fill-div" ng-href='trainers/{{trainer.$id}}'>
+                        <div class="info-div">
+                            {{trainer.name}}
+                        </div>
+                    </a>
+                    <!-- TODO: add more inforgraphics: pricing, workout types, city etc...-->
                 </div>
             </div>
-            <!-- TODO: add more inforgraphics: pricing, workout types, city etc...-->
-            <a class='btn btn-link' ng-href='trainers/{{trainer.$id}}'>{{trainer.name}}<span>{{trainer.city}}</span></a>
+            {{trainer.city}}
         </div>
     </div>
 </div>

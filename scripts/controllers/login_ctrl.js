@@ -28,7 +28,16 @@
                 
             });
 
-           
+            $scope.settings = function() {
+            };
+            
+            $scope.dashboard = function() {
+            };
+            
+            $scope.profile = function() {
+                $location.path('sign_up');
+            };
+            
             $scope.open_auth_modal  = auth_service.open_auth_modal;
             $scope.logout = auth_service.logout;
         }]);
