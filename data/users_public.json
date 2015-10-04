@@ -1,0 +1,286 @@
+{
+        "00201": {
+            "name":"Ned Stark",            "avatar":"http://vignette2.wikia.nocookie.net/gameofthrones/images/9/9c/EddardStark.jpg/revision/latest?cb=20110626030942",
+            "description":"Eddard Stark, popularly known as Ned, is a major character in the first season. He is played by starring cast member Sean Bean, and debuts in the series premiere. He will reappear in the sixth season, in a flashback, played by Sebastian Croft. Eddard is the head of House Stark, the Lord of Winterfell, Lord Paramount and Warden of the North, and Hand of the King to Robert I Baratheon. He was the father of Robb, Sansa, Arya, Bran and Rickon by his wife, Catelyn Tully, and to Jon Snow, his bastard son by an unknown mother. He is a dedicated husband and father, a loyal friend and an honorable lord."
+        },
+        "00202": {
+            "name":"Catelyn Stark",
+            "avatar":"http://vignette2.wikia.nocookie.net/gameofthrones/images/d/d8/CatelynS3Promo.jpg/revision/latest?cb=20131004004734",
+            "description":"Catelyn Stark, née Tully, is a major character in the first, second and third seasons. She is played by starring cast member Michelle Fairley, and debuts in the series premiere. She was played in the unaired pilot by Jennifer Ehle but the role was recast."
+        },
+        "00203": {
+            "name":"Robb Stark",
+            "avatar":"http://vignette1.wikia.nocookie.net/gameofthrones/images/e/e9/Robb-3x03.jpg/revision/latest?cb=20130413125346",
+            "description":"Robb Stark is a major character in the first, second, and third seasons. He is played by starring cast member Richard Madden, and debuts in the series premiere. Robb is the eldest son of Lord Eddard Stark of Winterfell and his wife Lady Catelyn, brother of Sansa, Arya, Bran and Rickon Stark, and half-brother of Jon Snow. He adopts a direwolf named Grey Wind."
+        },
+        "00204": {
+            "name":"Jon Snow",
+            "avatar":"http://vignette2.wikia.nocookie.net/gameofthrones/images/9/95/Jon_Snow_%28S05E05%29.jpg/revision/latest?cb=20150512181258",
+            "description":"Jon Snow is a major character in the first, second, third, fourth, fifth and sixth seasons. He is played by starring cast member Kit Harington, and debuts in the series premiere. Jon is the bastard son of Lord Eddard Stark of Winterfell. He was a steward in the Night's Watch. Now serving on the Wall, Jon has found a place of acceptance where the circumstances of his birth are of little importance. He has a pet direwolf named Ghost, and wields the bastard sword, Longclaw, which was a gift from Lord Commander Jeor Mormont, who took Jon as his personal steward and came to see him as a surrogate son."
+        },
+        "00205": {
+            "name":"Sansa Stark",
+            "avatar":"http://vignette4.wikia.nocookie.net/gameofthrones/images/1/1f/Sansa_Stark.jpg/revision/latest?cb=20110318201955",
+            "description":"Sansa Stark is a major character in the first, second, third, fourth, fifth, and sixth seasons. She is played by starring cast member Sophie Turner, and debuts in the series premiere. Sansa is the daughter of Lord Eddard Stark of Winterfell and his wife Lady Catelyn, sister of Robb, Arya, Bran and Rickon Stark, and half-sister of Jon Snow. She moves to King's Landing when her father is appointed Hand of the King to Robert Baratheon, and she is betrothed to heir apparent Joffrey."
+        },
+        "00206": {
+            "name":"Arya Stark",
+            "avatar":"http://vignette3.wikia.nocookie.net/gameofthrones/images/3/39/Arya_Stark_1x05.jpg/revision/latest?cb=20110626031118",
+            "description":"Arya Stark is a major character in the first, second, third, fourth, fifth and sixth seasons. She is played by starring cast member Maisie Williams, and debuts in the series premiere. Arya is the younger daughter of Lord Eddard Stark and his wife Lady Catelyn Stark. She is headstrong, fiercely independent, disdains traditional women's pursuits, and thus is often mistaken for a boy. She wields a sword named Needle, a gift from her half-brother, Jon Snow, and was trained in the Braavosi style of swordfighting while living in King's Landing. She adopted the direwolf Nymeria, but they have since been separated after Nymeria attacked Joffrey, forcing Arya to send her away in order to prevent her execution."
+        },
+        "00207": {
+            "name":"Bran Stark",
+            "avatar":"http://vignette3.wikia.nocookie.net/gameofthrones/images/9/97/Bran_Stark_in_Oathkeeper.png/revision/latest?cb=20140428204046",
+            "description":"Brandon Stark, commonly called Bran, is a major character in the first, second, third, fourth and sixth seasons. He is played by starring cast member Isaac Hempstead-Wright and debuts in the series premiere. Bran Stark is a noble boy living with his family in Winterfell. He lost the use of his legs after being pushed out of a tower window by Jaime Lannister after discovering his incestuous relationship with Cersei Lannister. He relies on the servant Hodor to aid his mobility. He has had prophetic dreams."
+        },
+        "00208": {
+            "name":"Rickon Stark",
+            "avatar":"http://vignette3.wikia.nocookie.net/gameofthrones/images/c/c9/Rickon_Stark_Season_3.jpg/revision/latest?cb=20150314034405",
+            "description":"Rickon Stark is a recurring character in the first, second, third and sixth[1] seasons. He is played by guest star Art Parkinson and debuts in the series premiere."
+        },
+        "00301": {
+            "name":"Robert Baratheon",
+            "avatar":"http://vignette3.wikia.nocookie.net/gameofthrones/images/d/d4/RobertBaratheon.jpg/revision/latest?cb=20141119000127",
+            "description":"Robert Baratheon is a major character in the first season. He is played by starring cast member Mark Addy, and debuts in the series premiere."
+        },
+        "00302": {
+            "name":"Stannis Baratheon",
+            "avatar":"http://vignette1.wikia.nocookie.net/gameofthrones/images/7/7a/Stannis_S05E09.png/revision/latest?cb=20150609005538",
+            "description":"Stannis Baratheon is a major character in the second, third, fourth and fifth seasons. He is played by starring cast member Stephen Dillane, and debuts in 'The North Remembers'. Stannis is mentioned in the first season but did not appear."
+        },
+        "00303": {
+            "name":"Renly Baratheon",
+            "avatar":"http://vignette3.wikia.nocookie.net/gameofthrones/images/3/3d/Renly_profile.jpg/revision/latest?cb=20130116113034",
+            "description":"Renly Baratheon is a recurring character in the first and second seasons. He is played by guest star Gethin Anthony, and debuts in 'Lord Snow.' Renly is a younger son of House Baratheon who is the Lord of Storm's End and has served on the small council as Master of Laws. Following the death of his oldest brother King Robert Baratheon, Renly claims the Iron Throne for himself, contesting the claims of his nephew Joffrey Baratheon and his older brother Stannis Baratheon. Renly is assassinated by a shadow creature conjured by Stannis' advisor Melisandre during the War of the Five Kings. After Renly's death most of his bannermen from the Stormlands submit to his older brother."
+        },
+        "00304": {
+            "name":"Joffrey Baratheon",
+            "avatar":"http://vignette3.wikia.nocookie.net/gameofthrones/images/5/5f/Joffrey_Baratheon_2.jpg/revision/latest?cb=20110626031339",
+            "description":"Joffrey Baratheon is a major character in the first, second, third, and fourth seasons. He is played by Jack Gleeson and debuts in the series premiere. Joffrey ruled the Seven Kingdoms, having claimed the Iron Throne after his legal father, King Robert Baratheon, died. However, Joffrey was actually the bastard son of the incestuous relationship between Ser Jaime Lannister and Queen Cersei Lannister. Because of this, his claim to the Iron Throne was challenged by Robert's younger brother, Stannis Baratheon. He was formally styled as His Grace, Joffrey of the Houses Baratheon and Lannister, the First of His Name, King of the Andals and the First Men, Lord of the Seven Kingdoms, and Protector of the Realm."
+        },
+        "00305": {
+            "name":"Tommen Baratheon",
+            "avatar":"http://vignette3.wikia.nocookie.net/gameofthrones/images/9/94/Tommen_sons_of_the_harpy.jpg/revision/latest?cb=20150504161509",
+            "description":"Tommen Baratheon is a major character in the fifth and sixth seasons. He initially appeared as a recurring character in the first, second and fourth seasons. He is portrayed by starring cast member Dean-Charles Chapman, taking over the role (starting in Season 4) from Callum Wharry, who played the character briefly in Seasons 1 and 2. Tommen is the younger brother of late King Joffrey and Princess Myrcella, and Joffrey's heir presumptive to the Iron Throne. Though legally the son of the late King Robert Baratheon and Queen Cersei Lannister, his true father is Ser Jaime Lannister, the Queen's twin brother. His sole biological grandparents, Tywin and Joanna Lannister, were also first cousins."
+        },
+        "00306": {
+            "name":"Myrcella Baratheon",
+            "avatar":"http://vignette2.wikia.nocookie.net/gameofthrones/images/0/02/MyrcellaS5Cropped.jpg/revision/latest?cb=20150318224838",
+            "description":"Princess Myrcella Baratheon is a recurring character in the first, second, and fifth seasons. She is portrayed by guest star Nell Tiger Free, taking over the role (starting in Season 5) from Aimee Richardson, who played the character in Seasons 1 and 2 and debuts in the series premiere. Princess Myrcella is commonly thought to be the only daughter of King Robert Baratheon and Queen Cersei Lannister. However, like her siblings, her real father is Jaime Lannister. Her younger brother Tommen Baratheon currently sits on the Iron Throne as the King of the Andals and the First Men. She was sent to Dorne as part of a marriage pact with House Martell, and although she was allowed to return to King's Landing with her betrothed by Doran Martell, she was poisoned by Ellaria Sand and died."
+        },
+        "00307": {
+            "name":"Shireen Baratheon",
+            "avatar":"http://vignette4.wikia.nocookie.net/gameofthrones/images/e/eb/Shireen_Baratheon_Season_4_profile.jpg/revision/latest?cb=20140406204724",
+            "description":"Princess Shireen Baratheon is a recurring character in the third, fourth and fifth seasons. She was played by Kerry Ingram and debuts in 'Kissed by Fire'. Shireen was the daughter and only child of Stannis and Selyse Baratheon."
+        },
+        "00401": {
+            "name":"Tywin Lannister",
+            "avatar":"http://vignette1.wikia.nocookie.net/gameofthrones/images/e/ed/Charles-Dance-as-Tywin-Lannister_photo-Macall-B.Polay_HBO.jpg/revision/latest?cb=20140326175142",
+            "description":"Lord Tywin Lannister is a major character in the second, third and fourth seasons. He initially appeared as a recurring character in the first season, debuting in 'You Win or You Die', and appeared briefly as a corpse in the fifth season. He was played by starring cast member Charles Dance. Tywin Lannister was the head of House Lannister, Lord of Casterly Rock, Warden of the West, Lord Paramount of the Westerlands, Hand of the King on three occasions, and Protector of the Realm. He was the father of Cersei, Jaime and Tyrion Lannister."
+        },
+        "00402": {
+            "name":"Cersei Lannister",
+            "avatar":"http://vignette2.wikia.nocookie.net/gameofthrones/images/c/c2/CerseiEW.png/revision/latest?cb=20120316191120",
+            "description":"Cersei Lannister is a major character in the first, second, third, fourth, fifth, and sixth seasons. She is portrayed by starring cast member Lena Headey and debuts in the series premiere. Cersei is the widow of King Robert Baratheon and Queen Regent of the Seven Kingdoms. She is the daughter of Lord Tywin Lannister, twin sister of Jaime Lannister and elder sister of Tyrion Lannister. She has an incestuous sexual relationship with Jaime, who is secretly the father of her three children, Joffrey, Myrcella and Tommen."
+        },
+        "00403": {
+            "name":"Jaime Lannister",
+            "avatar":"http://vignette2.wikia.nocookie.net/gameofthrones/images/8/81/Jaime_Lannister_%28S05E02%29.jpg/revision/latest?cb=20150422205941",
+            "description":"Jaime Lannister is a major character in the first, second, third, fourth, fifth and sixth seasons. He is played by starring cast member Nikolaj Coster-Waldau and debuts in the series premiere. Ser Jaime Lannister is a knight of the Kingsguard, the son of Tywin Lannister, twin brother of Queen Cersei Lannister, and older brother of Tyrion Lannister. Previously he served in the Kingsguard of Aerys II Targaryen and, infamously, he betrayed and killed Aerys during the Sack of King's Landing, earning him the sobriquet 'The Kingslayer'. Jaime is involved in an incestuous sexual relationship with Cersei, and, unknown to most, is the biological father of her three children, Joffrey, Myrcella and Tommen."
+        },
+        "00404": {
+            "name":"Tyrion Lannister",
+            "avatar":"http://img3.wikia.nocookie.net/__cb20150619051612/gameofthrones/images/c/c8/Tyrion-TheDanceofDragons.jpg",
+            "description":"Tyrion Lannister is a major character in the first, second, third, fourth, fifth, and sixth seasons. He is played by starring cast member Peter Dinklage and debuts in the series premiere. Tyrion Lannister is the youngest son of Lord Tywin Lannister and younger brother of Cersei and Jaime Lannister. A dwarf, he uses his wit and intellect to overcome the prejudice he faces."
+        },
+        "00405": {
+            "name":"Kevan Lannister",
+            "avatar":"http://vignette1.wikia.nocookie.net/gameofthrones/images/5/53/Kevan_tree.jpg/revision/latest?cb=20120222180134",
+            "description":"Kevan Lannister is a recurring character in the first, second, fifth and sixth[1] seasons. He is played by guest star Ian Gelder and debuts in 'The Pointy End'. Ser Kevan is a loyal adviser to his older brother Lord Tywin Lannister and one of the topmost officers in the Lannister armies during the War of the Five Kings. After the arrest of his niece, Queen Mother Cersei Lannister, Grand Maester Pycelle offers Kevan the position of Hand of the King, which he accepts and, shortly thereafter, he returns to King's Landing."
+        },
+        "00406": {
+            "name":"Lancel Lannister",
+            "avatar":"http://vignette1.wikia.nocookie.net/gameofthrones/images/1/15/Lancel_S5E4.png/revision/latest?cb=20150614183043",
+            "description":"Brother Lancel, formerly Ser Lancel Lannister, is a recurring character in the first, second, fifth and sixth seasons. He is played by guest star Eugene Simon and debuts in 'Lord Snow.' Lancel Lannister is the eldest son of Kevan Lannister and a nephew of Tywin Lannister. He was the squire to King Robert Baratheon and ensured that Robert had plenty of wine during his final hunt. Following Robert's death he becomes the lover of Queen Regent Cersei Lannister, his first cousin, and is also elevated to knighthood."
+        },
+        "00501": {
+            "name":"Daenerys Targaryen",
+            "avatar":"http://vignette2.wikia.nocookie.net/gameofthrones/images/6/6c/Daenerys_tree.jpg/revision/latest?cb=20140713213624",
+            "description":"Daenerys Targaryen, sometimes called Dany by her brother Viserys, is a major character in the first, second, third, fourth, fifth, and sixth seasons. She is played by starring cast member Emilia Clarke, and debuts in the series premiere."
+        },
+        "00502": {
+            "name":"Viseryes Targaryen",
+            "avatar":"http://vignette2.wikia.nocookie.net/gameofthrones/images/4/46/Viseryspromoheadshot.jpg/revision/latest?cb=20121214155927",
+            "description":""
+        },
+        "00503": {
+            "name":"Aemon Targaryen",
+            "avatar":"http://vignette2.wikia.nocookie.net/gameofthrones/images/3/32/Aemonepisode5.png/revision/latest?cb=20150511170352",
+            "description":""
+        },
+        "01001": {
+            "name":"Khal Drogo",
+            "avatar":"http://vignette1.wikia.nocookie.net/gameofthrones/images/3/3d/Drogo_1x01c.jpg/revision/latest?cb=20110425023653",
+            "description":""
+        },
+        "01002": {
+            "name":"Qotho",
+            "avatar":"http://vignette3.wikia.nocookie.net/gameofthrones/images/a/a5/Qotho_1x08.png/revision/latest?cb=20110903021820",
+            "description":""
+        },
+        "01003": {
+            "name":"Cohollo",
+            "avatar":"http://vignette3.wikia.nocookie.net/gameofthrones/images/6/63/Cohollo1x09.jpg/revision/latest?cb=20130208232110",
+            "description":""
+        },
+        "01004": {
+            "name":"Jhiqui",
+            "avatar":"http://vignette1.wikia.nocookie.net/gameofthrones/images/6/60/Jhiqui.png/revision/latest?cb=20110426174506",
+            "description":""
+        },
+        "01005": {
+            "name":"Irri",
+            "avatar":"http://vignette1.wikia.nocookie.net/gameofthrones/images/1/1d/Irri.jpg/revision/latest?cb=20120427205320",
+            "description":""
+        },
+        "01006": {
+            "name":"Rakharo",
+            "avatar":"http://vignette3.wikia.nocookie.net/gameofthrones/images/2/2f/Rakharo_1x02.png/revision/latest?cb=20110626051421",
+            "description":""
+        },
+        "00601": {
+            "name":"Olenna Tyrell",
+            "avatar":"http://vignette4.wikia.nocookie.net/gameofthrones/images/c/c3/Olenna-Tyrell-S4EP01.jpg/revision/latest?cb=20140417125307",
+            "description":""
+        },
+        "00602": {
+            "name":"Mace Tyrell",
+            "avatar":"http://vignette2.wikia.nocookie.net/gameofthrones/images/d/d2/The_Lord_Oaf_of_Highgarden.png/revision/latest?cb=20140618095424",
+            "description":""
+        },
+        "00603": {
+            "name":"Loras Tyrell",
+            "avatar":"http://vignette1.wikia.nocookie.net/gameofthrones/images/a/a7/LorasHD3x06-0.png/revision/latest?cb=20150519170126",
+            "description":""
+        },
+        "00604": {
+            "name":"Margaery Tyrell",
+            "avatar":"http://vignette2.wikia.nocookie.net/gameofthrones/images/f/f1/Margaery_Promo.jpg/revision/latest?cb=20120323183134",
+            "description":""
+        },
+        "00701": {
+            "name":"Doran Martell",
+            "avatar":"http://vignette3.wikia.nocookie.net/gameofthrones/images/1/14/Doran_Martell_Prince_of_Dorne.jpg/revision/latest?cb=20150131015940",
+            "description":""
+        },
+        "00702": {
+            "name":"Oberyn Martell",
+            "avatar":"http://vignette3.wikia.nocookie.net/gameofthrones/images/6/67/Oberyn_Martell_%28Season_4%2C_Episode_06%29.png/revision/latest?cb=20150302145403",
+            "description":""
+        },
+        "00703": {
+            "name":"Trystane Martell",
+            "avatar":"http://vignette2.wikia.nocookie.net/gameofthrones/images/d/d5/Trystane.jpg/revision/latest?cb=20150514211217",
+            "description":""
+        },
+        "00801": {
+            "name":"Theon Grayjoy",
+            "avatar":"http://vignette1.wikia.nocookie.net/gameofthrones/images/0/0a/Reek_in_sansas_wedding.jpg/revision/latest?cb=20150521020701",
+            "description":""
+        },
+        "00802": {
+            "name":"Asha Grayjoy",
+            "avatar":"http://vignette1.wikia.nocookie.net/gameofthrones/images/3/3c/YaraS3.jpg/revision/latest?cb=20131003215834",
+            "description":""
+        },
+        "00803": {
+            "name":"Balon Grayjoy",
+            "avatar":"http://vignette3.wikia.nocookie.net/gameofthrones/images/8/8b/Balon_Tree.jpg/revision/latest?cb=20120225103619",
+            "description":""
+        },
+        "00901": {
+            "name":"Brynden Tully",
+            "avatar":"http://vignette1.wikia.nocookie.net/gameofthrones/images/2/2a/Family_tree_Blackfish.jpg/revision/latest?cb=20130704203045",
+            "description":""
+        },
+        "00902": {
+            "name":"Edmure Tully",
+            "avatar":"http://vignette2.wikia.nocookie.net/gameofthrones/images/e/ef/Family_tree_Edmure.jpg/revision/latest?cb=20130704231147",
+            "description":""
+        },
+        "01101": {
+            "name":"Gregor Clegane",
+            "avatar":"http://vignette3.wikia.nocookie.net/gameofthrones/images/f/ff/Gregor_familytree.png/revision/latest?cb=20140519193658",
+            "description":""
+        },
+        "01102": {
+            "name":"Sandor Clegane",
+            "avatar":"http://vignette3.wikia.nocookie.net/gameofthrones/images/2/22/Sandor_profile.jpg/revision/latest?cb=20130111180246",
+            "description":""
+        },
+        "01201": {
+            "name":"Grand Maester Pycelle",
+            "avatar":"http://vignette4.wikia.nocookie.net/gameofthrones/images/e/e9/Pycelle_%28S04E06%29.jpg/revision/latest?cb=20150313210334",
+            "description":""
+        },
+        "01202": {
+            "name":"Maester Luwin",
+            "avatar":"http://vignette2.wikia.nocookie.net/gameofthrones/images/b/b2/Luwin_infobox.jpg/revision/latest?cb=20120701225048",
+            "description":""
+        },
+        "01203": {
+            "name":"Maester Cressen",
+            "avatar":"http://vignette2.wikia.nocookie.net/gameofthrones/images/3/32/Cressen.png/revision/latest?cb=20130511145128",
+            "description":""
+        },
+        "01301": {
+            "name":"Jon Arryn",
+            "avatar":"",
+            "description":""
+        },
+        "01302": {
+            "name":"Lysa Arryn",
+            "avatar":"http://vignette3.wikia.nocookie.net/gameofthrones/images/4/46/LysaArryn.png/revision/latest?cb=20140523133128",
+            "description":""
+        },
+        "01303": {
+            "name":"Robin Arryn",
+            "avatar":"http://vignette4.wikia.nocookie.net/gameofthrones/images/2/2e/Robin-Arryn-405.jpg/revision/latest?cb=20140505062813",
+            "description":""
+        },
+        "01304": {
+            "name":"Petyr Baelish",
+            "avatar":"http://vignette4.wikia.nocookie.net/gameofthrones/images/8/87/Littlefinger_S5.jpg/revision/latest?cb=20150219051259",
+            "description":""
+        },
+        "01305": {
+            "name":"Varys",
+            "avatar":"http://vignette1.wikia.nocookie.net/gameofthrones/images/a/ae/Varys_S5.jpg/revision/latest?cb=20150218060453",
+            "description":""
+        },
+        "01401": {
+            "name":"Barristan Selmy",
+            "avatar":"http://vignette1.wikia.nocookie.net/gameofthrones/images/1/1f/Barristan_Selmy_Sons_of_the_Harpy.jpg/revision/latest?cb=20150504180820",
+            "description":""
+        },
+        "01402": {
+            "name":"Boros Blount",
+            "avatar":"",
+            "description":""
+        },
+        "01403": {
+            "name":"Mandon Moore",
+            "avatar":"",
+            "description":""
+        },
+        "01404": {
+            "name":"Maryn Trant",
+            "avatar":"http://vignette3.wikia.nocookie.net/gameofthrones/images/4/46/Ser_Meryn.png/revision/latest?cb=20140928135510",
+            "description":""
+        },
+        "01405": {
+            "name":"Osmund Kettleblack",
+            "avatar":"",
+            "description":""
+        }
+}

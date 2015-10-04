@@ -1,12 +1,49 @@
 {
     "rules": {
-      "read-only": {
-        ".read": true,
-        ".write": false
-      },
-      "$other": {
-        ".read": true,
-        ".write": true
-      }
+        "read-only": {
+            ".read": true,
+            ".write": false
+        },
+        "users_public": {
+            ".read": true,
+            "$user_id": {
+                ".write": "$user_id === auth.uid"
+            }
+        },
+        "users_private": {
+            "$user_id": {
+                ".read": "$user_id === auth.uid",
+                ".write": "$user_id === auth.uid"
+            }
+        },
+        "trainers": {
+            ".read": true,
+            "$user_id": {
+                ".write": "$user_id === auth.uid",
+                ".validate": "root.child('users_public').hasChild($user_id)",
+                "session_refs": {
+                    ".write": "auth.uid !== null"
+                }
+            }
+        },
+        "mailbox": {
+            "$user_id": {
+                ".write": "auth !== null",
+                ".read": "auth.uid === $user_id",
+                ".validate": "root.child('users_public').hasChild($user_id)"
+            }
+        },
+        "sessions": {
+            "$user_id": {
+                ".validate": "root.child('users_public').hasChild($user_id)",
+                ".write": "$user_id === auth.uid",
+                ".read": "$user_id === auth.uid",
+                "$trainer_id": {
+                    ".validate": "root.child('trainers').hasChild($trainer_id)",
+                    ".write": "$trainer_id === auth.uid",
+                    ".read": "$trainer_id === auth.uid"
+                }
+            }
+        },
     }
 }

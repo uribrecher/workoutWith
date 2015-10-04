@@ -2,7 +2,7 @@
 (function () {
     'use strict';
 
-    var mainApp = angular.module('mainApp', ['ngRoute', 'firebase', 'ui.bootstrap']);
+    var mainApp = angular.module('mainApp', ['ngRoute', 'firebase', 'ui.bootstrap', 'ngAutocomplete']);
 
     mainApp.constant("domain", "https://workshopwith.firebaseio.com");
     
@@ -61,15 +61,18 @@
     mainApp.service("auth_service", ['$firebaseAuth', '$firebaseArray', '$modal', 'domain', auth_service]);
   
     mainApp.directive('backgroundImageDirective', function () {
-        return function (scope, element, attrs) {
-            element.css({
-                'background-image': 'url(' + attrs.backgroundImageDirective + ')',
-                'background-repeat': 'no-repeat',
-                'background-position': 'center',
-                'background-attachment': 'scroll',
-                'background-size': 'cover',
-                'min-height': attrs.minHeight
-            });
+        return {
+            restrict: 'A',
+            link: function(scope, element, attrs) {
+                    element.css({
+                        'background-image': 'url(' + attrs.backgroundImageDirective + ')',
+                        'background-repeat': 'no-repeat',
+                        'background-position': 'center',
+                        'background-attachment': 'scroll',
+                        'background-size': 'cover',
+                        'min-height': attrs.minHeight
+                    });
+            }
         };
     });
     
@@ -116,6 +119,11 @@
           when('/create_trainer', {
             templateUrl: 'html/trainer_form.html',
             controller: 'TrainerFormCtrl',
+            resolve: require_auth
+          }).
+          when('/dashboard', {
+            templateUrl: 'html/dashboard.html',
+            controller: 'DashboardCtrl',
             resolve: require_auth
           }).
           when('/trainers/:id', {

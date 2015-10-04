@@ -1,46 +1,47 @@
 <ng-include src="'html/nav_bar.html'">
 </ng-include>
-<div class="jumbotron" ng-if="trainer_loaded" background-image-directive="{{trainer.image}}" min-height="300px">
-    <h1>{{trainer.name}}</h1>
-    <h3>{{trainer.city}}</h3>
+<div class="jumbotron" ng-if="trainer.cover" background-image-directive="{{trainer.cover}}" min-height="300px">
+    <h1>{{public_trainer_data.name}}</h1>
+    <h3>{{trainer.location}}</h3>
+    <img class="trainer-avatar" ng-src="{{public_trainer_data.avatar}}">
 </div>
 
 <div class="container">
     <div class="row">
         <div class="col-md-12">
             <ul class="nav nav-pills">
-              <li ng-repeat="type in trainer.types" role="presentation" class="active"><a href="#">{{type}}</a></li>
+              <li ng-repeat="(workout, price) in trainer.prices" role="presentation" class="active"><a href="">{{workout + ' | ' + price}}</a></li>
             </ul>
         </div>
     </div>
 
     <div class="row">
         <div class="col-md-8">
-            {{trainer.details}}
+            {{public_trainer_data.description}}
         </div>
         <div class="col-md-4" ng-controller="BookingCtrl">
-            <form>
+            <form role="form" name="booking-form" novalidate>
                 <div class="form-group">
                     <label>date</label>
                     <input type="date" class="form-control" ng-model="form_date" min-date="minDate" max-date="'2020-06-22'" ng-required="true" />
                 </div>
                 <div class="form-group">
                     <label>time</label>
-                    <input type="time" class="form-control" ng-model="form_time" ng-required="true" />
+                    <input type="time" class="form-control" ng-model="form_time" step="1800"/>
                 </div>
                 <div class="form-group">
                     <label>choose workout</label>
-                    <select class="form-control" id="sel1" ng-options="item for item in trainer.types" ng-model="meeting.workout">
+                    <select class="form-control" id="sel1" ng-options="workout for (workout, price) in trainer.prices" ng-model="form_workout">
                     </select>
                 </div>
-                <button type="submit" class="btn btn-default" ng-click="create_meeting()">Book</button>   
+                <button type="submit" class="btn btn-default" ng-click="send_session_request()">Book</button>   
             </form>
         </div>
     </div>
     <h2>Reviews</h2>
     <div class="row" ng-repeat="review in reviews">
         <div class="col-md-2">
-            <img ng-src="{{get_trainee_object(review.trainee_id).avatar}}" class="img img-circle" width="100" height="100" />
+            <!--<img ng-src="{{get_avatar(review.trainee_id)}}" class="img img-circle" width="100" height="100" />-->
         </div>
         <div class="col-md-2">
             <rating ng-model="review.trainee_feedback.rating" readonly="true" ></rating>

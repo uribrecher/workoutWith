@@ -4,32 +4,38 @@
     <div class="jumbotron">
         <h1>WorkshopWith</h1>
         <div id="search-bar" class="input-group">
-            <input type="text" class="form-control" ng-model="city" placeholder="city"/>
+            <input type="text" class="form-control" placeholder="city" ng-autocomplete="city" details="" options="{types: '(cities)'}"/>
             <span class="input-group-btn" style="width:0px;"></span>
+            <!--
             <input type="date" class="form-control" ng-model="checkin" placeholder="check-in" style="margin-left:-1px" />
             <span class="input-group-btn" style="width:0px;"></span>
             <input type="date" class="form-control" ng-model="checkout" placeholder="check-out" style="margin-left:-2px" />
+            -->
             <div class="input-group-btn">
-                <button class="btn btn-default" type="button">SEARCH</button>
+                <button class="btn btn-default" type="button" ng-click="update_search()">SEARCH</button>
             </div>
         </div>
     </div>
 </header>
     
 <div class="container">
-    <div class="row" ng-controller="TrainersListCtrl">
+    <div class="row">
         <div ng-repeat="trainer in trainers" class="col-lg-3 col-md-4 col-sm-6 col-xs-12 trainer-class">
             <div class="stretchy-wrapper" >
-                <div background-image-directive="{{trainer.image}}">
+                <div background-image-directive="{{trainer.cover}}">
                     <a class="fill-div" ng-href='trainers/{{trainer.$id}}'>
                         <div class="info-div">
-                            {{trainer.name}}
+                            {{public_users.$getRecord(trainer.$id).name}}
+                        </div>
+                        <div class="trainer-avatar">
+                            <img class="trainer-avatar" ng-src="{{public_users.$getRecord(trainer.$id).avatar}}">
                         </div>
                     </a>
+                    
                     <!-- TODO: add more inforgraphics: pricing, workout types, city etc...-->
                 </div>
             </div>
-            {{trainer.city}}
+            {{trainer.location}}
         </div>
     </div>
 </div>

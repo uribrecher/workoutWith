@@ -3,109 +3,36 @@
     {
         "specialties_dictionary":
         {
-            "cattlebells":
+            "kettlebells":
             {
-                "symbol":"URL",
-                "description":"bla bla",
+                "symbol":"http://crazymonkeynw.com/wp-content/themes/gym/images/icon-boxes/kettlebell.png",
+                "description":"The kettlebell or girya (Russian: ги́ря) is a cast-iron or cast steel weight (resembling a cannonball with a handle) used to perform ballistic exercises that combine cardiovascular, strength and flexibility training.[1] They are also the primary equipment used in the weight lifting sport of girevoy sport. Russian kettlebells are traditionally measured in weight by pood, which (rounded to metric units) is defined as 16 kilograms (35 lb).[2][3]",
                 "cover_photo": "URL"
             },
 
             "bodyweight":
             {
+                "symbol":"http://a2.mzstatic.com/us/r30/Purple5/v4/f1/ee/ac/f1eeaccd-5b8d-8137-3215-de30c81a96bb/icon100x100.png",
+                "description":"Bodyweight exercises are strength training exercises that do not require free weights; the individual's own weight provides the resistance for the movement. Movements such as the push-up, the pull-up, and the sit-up are some of the most common bodyweight exercises."
             },
 
             "yoga":
             {
+                "symbol":"http://www.feelgoodyogavictoria.com/fgyp/wp-content/uploads/2015/th/downward-facing-dog-yoga-thumbnail.jpg",
+                "description": ""
             },
 
-            "functional":
+            "fitball":
             {
+                "symbol":"http://www.fitnessinessex.co.uk/images/icon-fitball.png",
+                "description": ""
             },
             
-            "TRX":
+            "suspension":
             {
+                "symbol": "http://thepitfitnesscenter.com/wp-content/uploads/2013/12/stsup.png",
+                "description":""
             }
-        },
-        
-        "cities":
-        {
-            "New York":"",
-            "London":"",
-            "Berlin":"",
-            "Tel Aviv":"",
-            "Tokyo":"",
-            "Paris":"",
-            "Stockholm":"",
-            "Moscow":"",
-            
-        }
-    },
-    
-    "public_user_data":
-    {
-        "asdj23jsdfj345jg":
-        {
-            "name":"uri",
-            "avatar":"URL",
-        }
-    },
-
-    "private_trainee_data":
-    {
-        "asdj23jsdfj345jg":
-        {
-            "age":30,
-            "height":174,
-            "weight": 60.5,
-            "e-mail": ""
-        }
-    },
-
-    "public_trainer_data":
-    {
-        "asdj23jsdfj345jg":
-        {
-            "description": "bla bla bla",
-            "cover_photo": "URL",
-            "specialties": [],
-            "price_per_hour": 154,
-            "city": "tel-aviv"
-        }
-    },
-    
-    "private_trainer_data":
-    {
-        
-    },
-
-    "meetings":
-    {
-        "34234asdbasd03423":
-        {
-            "start_time":"",
-            "end_time":"",
-            "trainer_id":"abc",
-            "trainee_id":"def"
-        }
-    },
-    
-    "trainer_feedbacks":
-    {
-        "34234asdbasd03423":
-        {
-            "text": "bli bli",
-            "rating": 3.5,
-            "trainer-only-field": [3,4,5]
-        }
-    },
-    
-    "trainee_feedbacks":
-    {
-        "34234asdbasd03423":
-        {
-                "rating": 5,
-                "text": "bla bla"
-        }
+        }      
     }
-
 }

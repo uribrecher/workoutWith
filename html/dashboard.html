@@ -1,0 +1,16 @@
+<ng-include src="'html/nav_bar.html'">
+</ng-include>
+<div class="jumbotron" ng-if="user.public.avatar" background-image-directive="{{user.public.avatar}}" min-height="300px">
+    <h1>Dashboard</h1>
+</div>
+
+<div class="container">
+    <div ng-repeat="trainer in sessions">
+        <div class="row" ng-repeat="session in trainer">
+            <div class="col-sm-3"><img class="trainer-avatar" ng-src="{{users.$getRecord(trainer.$id).avatar}}"/></div>
+            <div class="col-sm-3">{{users.$getRecord(trainer.$id).name}}<br>{{session.time}}</div>
+            <div class="col-sm-3">{{session.workout}}</div>
+            <div class="col-sm-3">{{session.state}}</div>        
+        </div>
+    </div>
+</div>

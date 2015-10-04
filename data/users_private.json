@@ -1,0 +1,344 @@
+{
+        "00201": {
+            "e-mail": "ned.stark@gmail.com",
+            "bday": "iso date",
+            "gender": "male",
+            "measurement system": "metric"
+        },
+        "00202": {
+            "e-mail": "cat.stark@gmail.com",
+            "bday": "iso date",
+            "gender": "male",
+            "measurement system": "metric"
+        },
+        "00203": {
+            "e-mail": "robb.stark@gmail.com",
+            "bday": "iso date",
+            "gender": "male",
+            "measurement system": "metric"
+        },
+        "00204": {
+             "e-mail": "jon.snow@gmail.com",
+            "bday": "iso date",
+            "gender": "male",
+            "measurement system": "metric"
+        },
+        "00205": {
+            "e-mail": "sansa.stark@gmail.com",
+            "bday": "iso date",
+            "gender": "female",
+            "measurement system": "metric"
+        },
+        "00206": {
+            "e-mail": "arya.stark@gmail.com",
+            "bday": "iso date",
+            "gender": "female",
+            "measurement system": "metric"
+        },
+        "00207": {
+            "e-mail": "bran.stark@gmail.com",
+            "bday": "iso date",
+            "gender": "male",
+            "measurement system": "metric"
+        },
+        "00208": {
+            "e-mail": "ryckon.stark@gmail.com",
+            "bday": "iso date",
+            "gender": "male",
+            "measurement system": "metric"
+        },
+        "00301": {
+            "e-mail": "robert.baratheon@gmail.com",
+            "bday": "iso date",
+            "gender": "male",
+            "measurement system": "metric"
+        },
+        "00302": {
+            "e-mail": "stannis.baratheon@gmail.com",
+            "bday": "iso date",
+            "gender": "male",
+            "measurement system": "metric"
+        },
+        "00303": {
+            "e-mail": "renly.baratheon@gmail.com",
+            "bday": "iso date",
+            "gender": "male",
+            "measurement system": "metric"
+        },
+        "00304": {
+            "e-mail": "joffrey.baratheon@gmail.com",
+            "bday": "iso date",
+            "gender": "male",
+            "measurement system": "metric"
+        },
+        "00305": {
+            "e-mail": "tommen.baratheon@gmail.com",
+            "bday": "iso date",
+            "gender": "male",
+            "measurement system": "metric"
+        },
+        "00306": {
+            "e-mail": "myrcella.baratheon@gmail.com",
+            "bday": "iso date",
+            "gender": "male",
+            "measurement system": "metric"
+        },
+        "00307": {
+            "e-mail": "shireen.baratheon@gmail.com",
+            "bday": "iso date",
+            "gender": "male",
+            "measurement system": "metric"
+        },
+        "00401": {
+            "e-mail": "tywin.lannister@gmail.com",
+            "bday": "iso date",
+            "gender": "male",
+            "measurement system": "metric"
+       },
+        "00402": {
+            "e-mail": "carsei.lannister@gmail.com",
+            "bday": "iso date",
+            "gender": "male",
+            "measurement system": "metric"
+        },
+        "00403": {
+            "e-mail": "jaime.lannister@gmail.com",
+            "bday": "iso date",
+            "gender": "male",
+            "measurement system": "metric"
+        },
+        "00404": {
+            "e-mail": "tyrion.lannister@gmail.com",
+            "bday": "iso date",
+            "gender": "male",
+            "measurement system": "metric"
+        },
+        "00405": {
+            "e-mail": "kevan.lannister@gmail.com",
+            "bday": "iso date",
+            "gender": "male",
+            "measurement system": "metric"
+        },
+        "00406": {
+            "e-mail": "lancel.lannister@gmail.com",
+            "bday": "iso date",
+            "gender": "male",
+            "measurement system": "metric"
+        },
+        "00501": {
+            "e-mail": "daenerys.targaryen@gmail.com",
+            "bday": "iso date",
+            "gender": "male",
+            "measurement system": "metric"
+        },
+        "00502": {
+            "e-mail": "viserys.targaryen@gmail.com",
+            "bday": "iso date",
+            "gender": "male",
+            "measurement system": "metric"
+        },
+        "00503": {
+            "e-mail": "aemon.targaryen@gmail.com",
+            "bday": "iso date",
+            "gender": "male",
+            "measurement system": "metric"
+        },
+        "01001": {
+            "e-mail": "drogo@gmail.com",
+            "bday": "iso date",
+            "gender": "male",
+            "measurement system": "metric"
+        },
+        "01002": {
+            "e-mail": "qotho@gmail.com",
+            "bday": "iso date",
+            "gender": "male",
+            "measurement system": "metric"
+        },
+        "01003": {
+            "e-mail": "cohollo@gmail.com",
+            "bday": "iso date",
+            "gender": "male",
+            "measurement system": "metric"
+        },
+        "01004": {
+            "e-mail": "jhiqui@gmail.com",
+            "bday": "iso date",
+            "gender": "male",
+            "measurement system": "metric"
+        },
+        "01005": {
+            "e-mail": "irri@gmail.com",
+            "bday": "iso date",
+            "gender": "male",
+            "measurement system": "metric"
+        },
+        "01006": {
+            "e-mail": "rakharo@gmail.com",
+            "bday": "iso date",
+            "gender": "male",
+            "measurement system": "metric"
+       },
+        "00601": {
+            "e-mail": "ollena.tyrell@gmail.com",
+            "bday": "iso date",
+            "gender": "male",
+            "measurement system": "metric"
+        },
+        "00602": {
+            "e-mail": "mace.tyrell@gmail.com",
+            "bday": "iso date",
+            "gender": "male",
+            "measurement system": "metric"
+        },
+        "00603": {
+            "e-mail": "loras.tyrell@gmail.com",
+            "bday": "iso date",
+            "gender": "male",
+            "measurement system": "metric"
+        },
+        "00604": {
+            "e-mail": "margaery.tyrell@gmail.com",
+            "bday": "iso date",
+            "gender": "male",
+            "measurement system": "metric"
+        },
+        "00701": {
+            "e-mail": "doran.martell@gmail.com",
+            "bday": "iso date",
+            "gender": "male",
+            "measurement system": "metric"
+       },
+        "00702": {
+            "e-mail": "oberyn.martell@gmail.com",
+            "bday": "iso date",
+            "gender": "male",
+            "measurement system": "metric"
+        },
+        "00703": {
+            "e-mail": "trystan.martell@gmail.com",
+            "bday": "iso date",
+            "gender": "male",
+            "measurement system": "metric"
+        },
+        "00801": {
+            "e-mail": "theon.grayjoy@gmail.com",
+            "bday": "iso date",
+            "gender": "male",
+            "measurement system": "metric"
+        },
+        "00802": {
+            "e-mail": "asha.grayjoy@gmail.com",
+            "bday": "iso date",
+            "gender": "male",
+            "measurement system": "metric"
+        },
+        "00803": {
+            "e-mail": "balon.grayjoy@gmail.com",
+            "bday": "iso date",
+            "gender": "male",
+            "measurement system": "metric"
+        },
+        "00901": {
+            "e-mail": "brynden.tully@gmail.com",
+            "bday": "iso date",
+            "gender": "male",
+            "measurement system": "metric"
+        },
+        "00902": {
+            "e-mail": "edmure.tully@gmail.com",
+            "bday": "iso date",
+            "gender": "male",
+            "measurement system": "metric"
+        },
+        "01101": {
+            "e-mail": "gregor.clegane@gmail.com",
+            "bday": "iso date",
+            "gender": "male",
+            "measurement system": "metric"
+        },
+        "01102": {
+            "e-mail": "sandor.clegane@gmail.com",
+            "bday": "iso date",
+            "gender": "male",
+            "measurement system": "metric"
+        },
+        "01201": {
+            "e-mail": "pycelle.maester@gmail.com",
+            "bday": "iso date",
+            "gender": "male",
+            "measurement system": "metric"
+        },
+        "01202": {
+             "e-mail": "luwin.maester@gmail.com",
+            "bday": "iso date",
+            "gender": "male",
+            "measurement system": "metric"
+       },
+        "01203": {
+            "e-mail": "cressen.maester@gmail.com",
+            "bday": "iso date",
+            "gender": "male",
+            "measurement system": "metric"
+        },
+        "01301": {
+            "e-mail": "jon.arryn@gmail.com",
+            "bday": "iso date",
+            "gender": "male",
+            "measurement system": "metric"
+        },
+        "01302": {
+            "e-mail": "lysa.arryn@gmail.com",
+            "bday": "iso date",
+            "gender": "male",
+            "measurement system": "metric"
+        },
+        "01303": {
+            "e-mail": "robin.arryn@gmail.com",
+            "bday": "iso date",
+            "gender": "male",
+            "measurement system": "metric"
+        },
+        "01304": {
+            "e-mail": "petyr.baelish@gmail.com",
+            "bday": "iso date",
+            "gender": "male",
+            "measurement system": "metric"
+        },
+        "01305": {
+            "e-mail": "varys.eunuch@gmail.com",
+            "bday": "iso date",
+            "gender": "male",
+            "measurement system": "metric"
+        },
+        "01401": {
+            "e-mail": "baristan.selmy@gmail.com",
+            "bday": "iso date",
+            "gender": "male",
+            "measurement system": "metric"
+        },
+        "01402": {
+            "e-mail": "boros.blount@gmail.com",
+            "bday": "iso date",
+            "gender": "male",
+            "measurement system": "metric"
+        },
+        "01403": {
+            "e-mail": "mandon.moore@gmail.com",
+            "bday": "iso date",
+            "gender": "male",
+            "measurement system": "metric"
+        },
+        "01404": {
+            "e-mail": "maryn.trant@gmail.com",
+            "bday": "iso date",
+            "gender": "male",
+            "measurement system": "metric"
+        },
+        "01405": {
+            "e-mail": "osmund.ketteblack@gmail.com",
+            "bday": "iso date",
+            "gender": "male",
+            "measurement system": "metric"
+        }
+}

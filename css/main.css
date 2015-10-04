@@ -23,6 +23,12 @@ a.fill-div {
     margin-bottom: 0px !important;
 }
 
+#search-bar
+{
+    width: 60%;
+    align-content: center;
+}
+
 .jumbotron
 {
     padding-left: 25px;
@@ -34,6 +40,16 @@ a.fill-div {
 {
     margin-top: -5px;
     border-color: aqua;
+}
+
+.trainer-avatar
+{
+    width: 60px;
+    height:60px;
+    border-radius: 50%;
+    overflow: hidden;
+    border-style: solid;
+    border-color: white;
 }
 
 div.stretchy-wrapper {

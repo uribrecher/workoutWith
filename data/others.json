@@ -1,0 +1,39 @@
+{
+    "connections": {
+        "connection_id1": {
+            "initiator": "201",
+            "target": "202",
+            "state": "pending",
+            "message": "hi there, its owen from the kettlebells course"
+        }
+    },
+    
+    "sessions_public": {
+        "trainer1": {
+            "sess1": "iso time",
+            "sess2": "iso time",
+            "sess3": "iso time"
+        },
+        "trainer2": {
+            "sess4": "iso time",
+            "sess5": "iso time"
+        }
+        
+    },
+    
+    "sessions_private": {
+        "sess_id": {
+            "uid": "google:abc123",
+            
+        }
+    },
+    
+    "reviews": {
+        "rev_id": {
+            "sess_id": "id",
+            "date": "",
+            "review": "it was good",
+        }
+    }
+        
+}

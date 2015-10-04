@@ -5,37 +5,69 @@
                        ['$scope', '$firebaseObject', '$firebaseArray', '$location', 'auth_service',
                         'domain',
        function ($scope, $firebaseObject, $firebaseArray, $location, auth_service, domain) {
+           
+           var root_ref = new Firebase(domain);
+           $scope.birthday = new Date();;
+           
+           /*
            $scope.auth = auth_service.get_auth_object();
-           var authdata = $scope.auth.$getAuth();
-           
-           if (authdata) {
-               var user_ref = new Firebase(domain).child('users').child(authdata.uid);
-               $scope.user = $firebaseObject(user_ref);
+           $scope.auth.$onAuth(function(authdata) {
+               if (!authdata) {
+                   return;
+               }
                
-               $scope.user_loaded = false;
-          
-               $scope.user.$loaded(function() {
-                  $scope.user_loaded = true;
+               var uid = authdata.uid;
+               uid = "00201";
+               var public_user_ref = root_ref.child('users_public').child(uid);
+               var private_user_ref = root_ref.child('users_private').child(uid);
+
+               $scope.user = {
+                   private: $firebaseObject(private_user_ref),
+                   public: $firebaseObject(public_user_ref)
+               };
+               
+               var public_user_ref = root_ref.child('users_public').child($scope.authdata.uid);
+               var private_user_ref = root_ref.child('users_private').child($scope.authdata.uid);
+
+               private_user_ref.transaction(function(private_user_data) {
+                   if (private_user_data && private_user_data.registered) {
+                       $scope.birthday = new Date(private_user_data.birthday);
+                       return; // abort transaction
+                   }
+                   $scope.birthday = new Date();
+
+                   return {
+                       email: auth_service.get_email($scope.authdata),
+                       gender: "male",
+                       birthday: new Date().toISOString(),
+                       registered: true
+                   };
                });
-          
                
-               $scope.user.$loaded().then(function(userdata) {
-                    if (!userdata.birthday) {
-                        userdata.birthday = new Date().toISOString();
-                    } else {
-                        $scope.birthday = new Date(userdata.birthday);
-                    }
-                    if (!userdata.gender) {
-                        userdata.gender = "invalid";
-                    }
+               public_user_ref.transaction(function(public_user_data) {
+                   if (public_user_data && public_user_data.name) {
+                       return; // abort
+                   }
+                   
+                   return {
+                       name: auth_service.get_display_name($scope.authdata),
+                       avatar: auth_service.get_avatar($scope.authdata)
+                   };
                });
                
-           }
+           });
+           */
            
-           $scope.submit = function() {
-               $scope.user.registered = true;
-               $scope.user.birthday = $scope.birthday.toISOString();
-               $scope.user.$save().then(function(ref) {
+           $scope.update_user = function(valid_form) {
+               if (!valid_form)
+               {
+                   return;
+               }
+               
+               $scope.user.private.registered = true;
+               $scope.user.private.birthday = $scope.birthday.toISOString();
+               $scope.user.public.$save();
+               $scope.user.private.$save().then(function(ref) {
                    $location.path('trainers');
                }, function(error) {
                    console.log(error);

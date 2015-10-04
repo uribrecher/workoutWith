@@ -1,34 +1,41 @@
 <ng-include src="'html/nav_bar.html'">
 </ng-include>
-<div class="jumbotron" ng-if="user_loaded" background-image-directive="{{user.avatar}}" min-height="300px">
+<div class="jumbotron" ng-if="user.public.avatar" background-image-directive="{{user.public.avatar}}" min-height="300px">
     <h1>user profile</h1>
 </div>
 
 <div class="container">
-    <form role="form">
-      <div class="form-group">
+    <form name="signupForm" role="form" ng-submit="update_user(signupForm.$valid)" novalidate>
+      
+      <div class="form-group has-feedback" ng-class="{'has-error': signupForm.email.$invalid, 'has-success': signupForm.email.$valid}">
         <label for="email">Email address:</label>
-        <input type="email" class="form-control" id="email" ng-model="user.email">
+        <input type="email" class="form-control" name="email" ng-model="user.private.email">
+        <span class="glyphicon form-control-feedback" ng-class="{'glyphicon-remove': signupForm.email.$invalid, 'glyphicon-ok': signupForm.email.$valid}"></span>
+        <p ng-show="signupForm.email.$invalid" class="help-block">bad e-mail</p>      
       </div>
       <div class="form-group">
         <label for="username">name:</label>
-        <input type="text" class="form-control" id="username" ng-model="user.name">
+        <input type="text" class="form-control" id="username" ng-model="user.public.name">
       </div>
       <div class="form-group">
-        <label for="birthday">birthday:</label>
+        <label for="username">description:</label>
+        <textarea class="form-control" id="description" ng-model="user.public.description"></textarea>
+      </div>
+      <div class="form-group">
+        <label for="birthday">birth date:</label>
         <input type="date" class="form-control" id="birthday" ng-model="birthday">
       </div>
       <div class="form-group">
         <label for="gender">gender:</label>
-        <select class="form-control" id="gender" ng-model="user.gender">
+        <select class="form-control" id="gender" ng-model="user.private.gender">
             <option value="male">male</option>
             <option value="female">female</option>
         </select>
       </div>
-      <button type="submit" class="btn btn-default" ng-click="submit()">update profile</button>
+      <button type="submit" class="btn btn-primary" ng-disabled="signupForm.$invalid">update profile</button>
     </form>
 
-    <form role="form">
+    <form role="form" name="physicalForm" novalidate>
         <div class="form-group">
             <label for="date">date</label>
             <input type="date" class="form-control" id="date">
