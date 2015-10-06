@@ -1,13 +1,8 @@
 {
-    "read-only":
-    {
-        "specialties_dictionary":
-        {
             "kettlebells":
             {
                 "symbol":"http://crazymonkeynw.com/wp-content/themes/gym/images/icon-boxes/kettlebell.png",
-                "description":"The kettlebell or girya (Russian: ги́ря) is a cast-iron or cast steel weight (resembling a cannonball with a handle) used to perform ballistic exercises that combine cardiovascular, strength and flexibility training.[1] They are also the primary equipment used in the weight lifting sport of girevoy sport. Russian kettlebells are traditionally measured in weight by pood, which (rounded to metric units) is defined as 16 kilograms (35 lb).[2][3]",
-                "cover_photo": "URL"
+                "description":"The kettlebell or girya (Russian: ги́ря) is a cast-iron or cast steel weight (resembling a cannonball with a handle) used to perform ballistic exercises that combine cardiovascular, strength and flexibility training.[1] They are also the primary equipment used in the weight lifting sport of girevoy sport. Russian kettlebells are traditionally measured in weight by pood, which (rounded to metric units) is defined as 16 kilograms (35 lb).[2][3]"
             },
 
             "bodyweight":
@@ -19,20 +14,18 @@
             "yoga":
             {
                 "symbol":"http://www.feelgoodyogavictoria.com/fgyp/wp-content/uploads/2015/th/downward-facing-dog-yoga-thumbnail.jpg",
-                "description": ""
+                "description": "Yoga (/ˈjoʊɡə/;[1] Sanskrit, Listen) is a physical, mental, and spiritual practice or discipline which originated in India. There is a broad variety of schools, practices and goals[2] in Hinduism, Buddhism (particularly Vajrayana Buddhism[3][4][5]) and Jainism.[6][7][8][7] The best-known are Hatha yoga and Rāja yoga."
             },
 
             "fitball":
             {
                 "symbol":"http://www.fitnessinessex.co.uk/images/icon-fitball.png",
-                "description": ""
+                "description": "A core strengthening class designed to improve range of motion, strength, stability co-ordination and balance. Fitball provides an excellent workout which will result in a stronger core, improved posture and better body alignment."
             },
             
             "suspension":
             {
                 "symbol": "http://thepitfitnesscenter.com/wp-content/uploads/2013/12/stsup.png",
-                "description":""
-            }
-        }      
-    }
+                "description":"TRX Training draws on leading-edge research and best practices from the military, pro sports, and academic institutions coupled with our seasoned team’s experience working with thousands of athletes, coaches, trainers, first responders, subject matter experts, professors, and service members in all branches. As new discoveries evolve in the training space, TRX Training will incorporate these emerging best practices. The following core values give an overview of what TRX Training is today."
+            }   
 }

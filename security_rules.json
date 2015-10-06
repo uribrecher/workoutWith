@@ -45,5 +45,9 @@
                 }
             }
         },
+        "sessions_index": {
+            ".read": true,
+            ".write": true
+        }
     }
 }

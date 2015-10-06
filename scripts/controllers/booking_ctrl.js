@@ -38,7 +38,14 @@
                 //var end_time = angular.copy(start_time);
                 //end_time.setHours(end_time.getHours() + 1);
                 
-                session_service.send_session_request($scope.authdata.uid, $routeParams.id, start_time.toISOString(), "1");
+                session_service.send_session_request($scope.authdata.uid, 
+                                                     $routeParams.id, 
+                                                     start_time.toISOString(),
+                                                     $scope.form_workout).then(
+                    function() {
+                        $location.path('trainers');
+                    });
+                
             }
         }]);
 })();
