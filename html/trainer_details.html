@@ -12,9 +12,6 @@
             {{public_trainer_data.description}}
         </div>
         <div class="col-md-4" ng-controller="BookingCtrl">
-            <div class="btn-group">
-                        <label class="btn btn-default" ng-repeat="test in [1,2,3,4]" btn-radio="test" ng-model="$parent.form_workout">{{test}}</label>
-            </div>
             <form role="form" name="booking-form" novalidate>
                 <div class="form-group">
                     <label>date</label>
@@ -23,15 +20,11 @@
                 <div class="form-group">
                     <label>time</label>
                     <timepicker ng-model="form_time" minute-step="30" show-meridian="false"></timepicker>
-                    <!--<input type="time" class="form-control" ng-model="form_time" step="1800"/>-->
                 </div>
-                    <pre>{{form_workout}}</pre>
                 <div class="form-group">
                     <div class="btn-group btn-group-vertical">
                         <label ng-repeat="(workout, price) in trainer.prices" class="btn btn-default" ng-model="$parent.form_workout" btn-radio="workout">{{workout}} <span class="badge">{{price | currency}}</span></label>
                     </div>
-                    <!--<select class="form-control" id="sel1" ng-options="workout for (workout, price) in trainer.prices" ng-model="form_workout">
-                    </select>-->
                 </div>
                 <button type="submit" class="btn btn-default" ng-click="send_session_request()">Book</button>   
             </form>

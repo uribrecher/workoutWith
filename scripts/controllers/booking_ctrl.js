@@ -9,12 +9,9 @@
             var trainer_ref = root_ref.child("trainers").child($routeParams.id);
             var session_ref = root_ref.child("sessions");
 
+            $scope.user = auth_service.get_fb_user();
             $scope.trainer = $firebaseObject(trainer_ref);
-            //$scope.sessions = $firebaseArray(session_ref);
-
-
             $scope.form_date = new Date();
-            
             $scope.form_time = new Date();
             $scope.form_time.setMilliseconds(0);
             $scope.form_time.setSeconds(0);
@@ -22,11 +19,11 @@
             
             $scope.form_workout = "none";
             $scope.send_session_request = function() {
-                if (!$scope.authdata) {
+                if (!$scope.user.uid) {
                     auth_service.open_auth_modal();
                     return;
                 }
-                $scope.trainee_id = $scope.authdata.uid;
+                $scope.trainee_id = $scope.user.uid;
                 
                 var start_time = new Date($scope.form_date.getFullYear(),
                                           $scope.form_date.getMonth(),
@@ -34,11 +31,8 @@
                                           $scope.form_time.getHours(),
                                           $scope.form_time.getMinutes(),
                                           0,0);
-                
-                //var end_time = angular.copy(start_time);
-                //end_time.setHours(end_time.getHours() + 1);
-                
-                session_service.send_session_request($scope.authdata.uid, 
+                              
+                session_service.send_session_request($scope.user.uid, 
                                                      $routeParams.id, 
                                                      start_time.toISOString(),
                                                      $scope.form_workout).then(

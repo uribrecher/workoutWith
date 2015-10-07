@@ -52,24 +52,24 @@
         }
         
         this.confirm_session_request = function(trainer, session_id) {
-            var session_ref = get_session_reference(trainer, session_id);
+            var session_ref = this.get_session_reference(trainer, session_id);
             return q_fb_transaction(session_ref.child('state'), function(currentState) {
                 if (currentState === "pending") {
                     return "confirmed";
                 }
                 
-                return null;
+                return;
             });
         };
         
         this.reject_session_request = function(trainer, session_id) {
-            var session_ref = get_session_reference(trainer, session_id);
+            var session_ref = this.get_session_reference(trainer, session_id);
             return q_fb_transaction(session_ref.child('state'), function(currentState) {
                 if (currentState === "pending") {
                     return "rejected";
                 }
                 
-                return null;
+                return;
             });
         };
 
@@ -80,7 +80,7 @@
                     return "cancelled";
                 }
                 
-                return null;
+                return;
             });
         };
                 

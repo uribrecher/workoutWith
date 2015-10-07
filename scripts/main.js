@@ -6,60 +6,6 @@
 
     mainApp.constant("domain", "https://workshopwith.firebaseio.com");
     
-    function auth_service($firebaseAuth, $firebaseArray, $modal, domain) {
-        var ref = new Firebase(domain);
-        var fb_auth = $firebaseAuth(ref);
-        this.login = function (provider_name) {
-            fb_auth.$authWithOAuthPopup(provider_name, {scope: "email"});
-        };
-        this.logout = function () {
-            fb_auth.$unauth();
-        };
-        
-        this.get_auth_object = function () {
-            return fb_auth;
-        };
-        this.open_auth_modal = function () {
-            var modalInstance = $modal.open(
-                {
-                    animation: true,
-                    templateUrl: 'html/login_dialog.html',
-                    controller: 'AuthModalCtrl',
-                    size: 'sm'
-                });    
-        };
-        
-        this.get_display_name = function(authdata) {
-            if (authdata.provider === 'google') {
-                return authdata.google.displayName;
-            }
-            else if (authdata.provider === 'facebook') {
-                return authdata.facebook.displayName;
-            }
-        };
-        
-        this.get_email = function(authdata) {
-            if (authdata.provider === 'google') {
-                return authdata.google.email;
-            }
-            else if (authdata.provider === 'facebook') {
-                return authdata.facebook.email;
-            }
-        };
-        
-        this.get_avatar = function(authdata) {
-            if (authdata.provider === 'google') {
-                return authdata.google.profileImageURL;
-            }
-            else if (authdata.provider === 'facebook') {
-                return authdata.facebook.profileImageURL;
-            }
-        };
-        
-    };
-    
-    mainApp.service("auth_service", ['$firebaseAuth', '$firebaseArray', '$modal', 'domain', auth_service]);
-  
     mainApp.directive('backgroundImageDirective', function () {
         return {
             restrict: 'A',
@@ -84,7 +30,9 @@
                 if (error === "AUTH_REQUIRED") {
                     auth_service.open_auth_modal();
                 }
-        });
+            });
+            
+            auth_service.init();
     }]);
     
     
@@ -141,5 +89,11 @@
           });
       }]);
 
+    
+    mainApp.controller('navbarCtrl', ["$scope", "auth_service",
+            function($scope, auth_service) {
+                $scope.user = auth_service.get_fb_user();
+            }]);
+    
 })();
 

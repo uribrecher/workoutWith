@@ -6,11 +6,18 @@
 
 <div class="container">
     <div ng-repeat="trainer in sessions">
-        <div class="row" ng-repeat="session in trainer">
-            <div class="col-sm-3"><img class="trainer-avatar" ng-src="{{users.$getRecord(trainer.$id).avatar}}"/></div>
-            <div class="col-sm-3">{{users.$getRecord(trainer.$id).name}}<br>{{session.time}}</div>
-            <div class="col-sm-3">{{session.workout}}</div>
-            <div class="col-sm-3">{{session.state}}</div>        
+        <div ng-repeat="session in trainer">
+            <div class="row" >
+                <div class="col-sm-1"><img class="trainer-avatar" ng-src="{{users.$getRecord(trainer.$id).avatar}}"/></div>
+                <div class="col-sm-5">{{users.$getRecord(trainer.$id).name}}<br>{{session.time}}</div>
+                <div class="col-sm-3">{{session.workout}}</div>
+                <div class="col-sm-3">{{session.state}}</div>        
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <hr>
+                </div>
+            </div>
         </div>
     </div>
 </div>

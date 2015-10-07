@@ -11,6 +11,7 @@
           $scope.trainer = $firebaseObject(trainer_ref);          
           $scope.public_trainer_data = $firebaseObject(root_ref.child("users_public").child($routeParams.id));
           
+          // TODO: add reviews data here
           //var meetings_ref = root_ref.child("meetings");
           //$scope.reviews = $firebaseArray(meetings_ref.orderByChild("trainer_id").equalTo($routeParams.id));
       }]);

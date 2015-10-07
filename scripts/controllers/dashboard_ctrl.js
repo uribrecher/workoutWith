@@ -10,7 +10,9 @@
           var root_ref = new Firebase(domain);
           var users_ref = root_ref.child("users_public");
           $scope.users = $firebaseArray(users_ref);
+          $scope.user = auth_service.get_fb_user();
           
+          // TODO: try to avoid this direct usage of auth object
           $scope.auth.$onAuth(function(authData) {
               if (!authData) {
                   return;

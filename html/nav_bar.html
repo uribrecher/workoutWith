@@ -1,4 +1,4 @@
-<nav class="navbar navbar-default">
+<nav class="navbar navbar-default" ng-controller="navbarCtrl">
 <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
@@ -18,10 +18,10 @@
         <li><a href="#">Become a trainer</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li ng-hide="authdata">
+        <li ng-hide="user.uid">
             <a href="" ng-click="open_auth_modal()">LOGIN</a>
         </li>
-        <li class="dropdown" ng-show="authdata">
+        <li class="dropdown" ng-show="user.uid">
             <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                 <img id="user-avatar" ng-src="{{user.public.avatar}}" class="img-avatar img img-circle" width="30" height="30"/>
                 {{user.public.name}}<span class="caret"></span>
