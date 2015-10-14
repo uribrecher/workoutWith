@@ -1,8 +1,10 @@
 {
     "rules": {
         "read-only": {
-            ".read": true,
-            ".write": false
+            ".read": true
+        },
+        "write-only": {
+            ".write": "true"
         },
         "users_public": {
             ".read": true,
@@ -46,8 +48,22 @@
             }
         },
         "sessions_index": {
-            ".read": true,
-            ".write": true
+            "as_trainer": {
+                ".read": "auth !== null",
+                "$user_id": {
+                    "$session_id": {
+                        ".write": "$user_id === auth.uid || (auth !== null && newData.exists() && !data.exists())"
+                    }
+                }
+            },
+            "as_trainee": {
+                ".read": "auth !== null",
+                "$user_id": {
+                    "$session_id": {
+                        ".write": "$user_id === auth.uid || (auth !== null && newData.exists() && !data.exists())"
+                    }
+                }
+            }
         }
     }
 }
