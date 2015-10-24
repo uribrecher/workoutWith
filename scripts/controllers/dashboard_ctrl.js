@@ -15,6 +15,9 @@
               session_ids: {
               }
           };
+          $scope.items = {
+          };
+          
           $scope.select_all;
           
           // TODO: try to avoid this direct usage of auth object
@@ -22,13 +25,14 @@
               if (!authData) {
                   return;
               }
-              var sessions_ref = root_ref.child('sessions').child(authData.uid);
-              $scope.sessions = $firebaseArray(sessions_ref);
               
-              var trainee_sessions_ref = root_ref.child('sessions_index').child('as_trainee').child(authData.uid);
-              
-              trainee_sessions_ref.on('child_added',function(child) {
-                      $scope.selection.session_ids[child.key()] = false;
+              session_service.get_all_sessions_of_trainee(authData.uid, function(session_id, session_obj) {
+                  $scope.selection.session_ids[session_id] = false;
+                  $scope.items[session_id] = session_obj;
+              },
+              function(session_id) {
+                  delete $scope.selection.session_ids[session_id];
+                  delete $scope.items[session_id];
               });
           });
           
@@ -41,7 +45,7 @@
           $scope.cancel_selected = function() {
               for (var session_id in $scope.selection.session_ids) {
                   if ($scope.selection.session_ids[session_id]) {
-                      session_service.cancel_session_request($scope.user.uid, session_id);
+                      session_service.cancel_session_request(session_id);
                   }
               }
             

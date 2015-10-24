@@ -84,6 +84,11 @@
             controller: 'ReviewCtrl',
             resolve: require_auth
           }).
+          when('/trainer_reg', {
+            templateUrl: 'html/trainer_reg.html',
+            controller: 'TrainerRegCtrl',
+            resolve: require_auth
+          }).
           otherwise({
             redirectTo: 'trainers'
           });

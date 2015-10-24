@@ -1,7 +1,7 @@
 (function () {
     'use strict';
 
-    function session_service(domain, $q) {
+    function session_service(domain, $q, $firebaseObject) {
         var root_ref = new Firebase(domain);
         var sessions_ref = root_ref.child('sessions');
         var sessions_index_ref = root_ref.child('sessions_index');
@@ -11,6 +11,16 @@
             var deferred = $q.defer();
             
             ref.set(param,function(err) {
+                    if(err) return deferred.reject(err);
+                    deferred.resolve();
+            });
+            return deferred;
+        };
+        
+        var q_fb_update = function(ref, param) {
+            var deferred = $q.defer();
+            
+            ref.update(param,function(err) {
                     if(err) return deferred.reject(err);
                     deferred.resolve();
             });
@@ -32,85 +42,77 @@
             return deferred;
         };
         
-        var get_val_of = function(ref) {
-            var deferred = $q.defer();
-            ref.once("value", function(snap) {
-                deferred.resolve(snap.val());
-            });
-            return deferred.promise;
-        };
-        
         this.send_session_request = function(trainee, trainer, time, workout) {
-            var new_session_ref = sessions_ref.child(trainee).child(trainer).push();
+            var new_session_ref = sessions_ref.push();
             var trainer_index_ref = sessions_index_ref.child("as_trainer").child(trainer).child(new_session_ref.key());
             var trainee_index_ref = sessions_index_ref.child("as_trainee").child(trainee).child(new_session_ref.key());
 
-            var def1 = q_fb_set(new_session_ref, {
+            // first establish write permissions
+            var def1 = q_fb_set(new_session_ref.child('trainee'), trainee);
+            
+            // then update additional fields
+            var def2 = q_fb_update(new_session_ref, {
+                trainer: trainer,
                 time: time,
                 workout: workout,
                 state: "pending"
             });
             
-            var def2 = q_fb_set(trainer_index_ref, trainee);
-            var def3 = q_fb_set(trainee_index_ref, trainer);
-            return $q.all([def1,def2,def3]);
+            var def3 = q_fb_set(trainer_index_ref, trainee);
+            var def4 = q_fb_set(trainee_index_ref, trainer);
+            return $q.all([def1,def2,def3,def4]);
         };
         
-        
-        var get_session_by_trainer = function(trainer_id, session_id) {
-            var trainee_ref = sessions_index_ref.child("as_trainer").child(trainer_id).child(session_id);
-            var promise = get_val_of(trainee_ref).then(function(value) {
-                return sessions_ref.child(value).child(trainer_id).child(session_id);
-            });
-            return promise;
+        this.confirm_session_request = function(session_id) {
+            var session_ref = sessions_ref.child(session_id);
+
+            return q_fb_transaction(session_ref.child('state'), function(currentState) {
+                if (currentState === "pending") {
+                    return "confirmed";
+                }
+
+                return;
+            }); 
         };
         
-        var get_session_by_trainee = function(trainee_id, session_id) {
-            var trainers_ref = sessions_index_ref.child("as_trainee").child(trainee_id).child(session_id);
-            var promise = get_val_of(trainers_ref).then(function(value) {
-                return sessions_ref.child(trainee_id).child(value).child(session_id);
+        this.reject_session_request = function(session_id) {
+            var session_ref = sessions_ref.child(session_id);
+            return q_fb_transaction(session_ref.child('state'), function(currentState) {
+                if (currentState === "pending") {
+                    return "rejected";
+                }
+
+                return;
+            }); 
+        };
+
+        this.cancel_session_request = function(session_id) {
+            var session_ref = sessions_ref.child(session_id);
+            return q_fb_transaction(session_ref.child('state'), function(currentState) {
+                if (currentState === "pending" || currentState === "confirmed") {
+                    return "cancelled";
+                }
+
+                return;
+            }); 
+        };
+        
+        this.get_all_sessions_of_trainee = function(trainee_id, added_cb, removed_cb) {
+            var session_of_trainee_ref = sessions_index_ref.child('as_trainee').child(trainee_id);
+            
+            session_of_trainee_ref.on('child_added', function(snap) {
+                added_cb(snap.key(), {
+                    session: $firebaseObject(sessions_ref.child(snap.key())),
+                    trainer: $firebaseObject(root_ref.child('users_public').child(snap.val()))
+                })
             });
             
-            return promise;
+            session_of_trainee_ref.on('child_removed', function(snap) {
+                removed_cb(snap.key());
+            });
         };
         
-        this.confirm_session_request = function(trainer, session_id) {
-            get_session_by_trainers(trainer, session_id).then(function(session_ref) {
-                return q_fb_transaction(session_ref.child('state'), function(currentState) {
-                    if (currentState === "pending") {
-                        return "confirmed";
-                    }
-
-                    return;
-                });
-            });  
-        };
-        
-        this.reject_session_request = function(trainer, session_id) {
-            get_session_by_trainers(trainer, session_id).then(function(session_ref) {
-                return q_fb_transaction(session_ref.child('state'), function(currentState) {
-                    if (currentState === "pending") {
-                        return "rejected";
-                    }
-
-                    return;
-                });
-            });  
-        };
-
-        this.cancel_session_request = function(trainee, session_id) {
-            get_session_by_trainee(trainee, session_id).then(function(session_ref) {
-                return q_fb_transaction(session_ref.child('state'), function(currentState) {
-                    if (currentState === "pending" || currentState === "confirmed") {
-                        return "cancelled";
-                    }
-
-                    return;
-                });
-            });  
-        };
-                
     };
     
-    angular.module('mainApp').service("session_service", ['domain', '$q', session_service]);
+    angular.module('mainApp').service("session_service", ['domain', '$q', '$firebaseObject', session_service]);
 })();

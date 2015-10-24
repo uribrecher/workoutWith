@@ -23,6 +23,11 @@ a.fill-div {
     margin-bottom: 0px !important;
 }
 
+textarea
+{
+    resize:vertical;
+}
+
 #search-bar
 {
     width: 60%;
@@ -67,4 +72,9 @@ div.stretchy-wrapper > div {
 	color: white;
 	font-size: 24px;
 	text-align: center;
+}
+
+.table tbody>tr>td.vert-align
+{
+    vertical-align: middle;
 }

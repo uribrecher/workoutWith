@@ -5,36 +5,30 @@
 </div>
 
 <div class="container">
-    <div class="row">
-        <div class="col-sm-1">
-            <div class="checkbox">
-                <input type="checkbox" ng-model="select_all" ng-click="check_all()">
-            </div>
-        </div>
-        <div class="col-sm-3">
-            <div class="btn btn-default" ng-click="cancel_selected()">cancel selected</div>
-        </div>
-    </div>
-    <hr>
-    <div ng-repeat="trainer in sessions">
-        <div ng-repeat="(session_id, session) in trainer">
-            <div class="row" >
-                <div class="col-sm-1">
-                    <div class="checkbox">
-                        <input type="checkbox" ng-model="selection.session_ids[session_id]">
-                    </div>
-                    <img class="trainer-avatar" ng-src="{{users.$getRecord(trainer.$id).avatar}}"/>
-                </div>
-                <div class="col-sm-5">{{users.$getRecord(trainer.$id).name}}<br>{{session.time}}</div>
-                <div class="col-sm-3">{{session.workout}}</div>
-                <div class="col-sm-3">{{session.state}}</div>        
-            </div>
-            <div class="row">
-                <div class="col-sm-12">
-                    <hr>
-                </div>
-            </div>
-        </div>
-    </div>
-    <pre>{{selection | json}}</pre>
+    <div class="btn btn-default" ng-click="cancel_selected()">cancel selected</div>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th class="vert-align col-xs-1">
+                    <input type="checkbox" ng-model="select_all" ng-click="check_all()">
+                </th>
+                <th class="col-xs-3">trainer</th>
+                <th class="col-xs-3">time</th>
+                <th class="col-xs-4">workout</th>
+                <th class="col-sx-1">state</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="(session_id, session_obj) in items">
+                <td class="vert-align"> 
+                    <input type="checkbox" ng-model="selection.session_ids[session_id]">
+                </td>
+                <td>{{session_obj.trainer.name}}</td>
+                <td>{{session_obj.session.time | date}}</td>
+                <td>{{session_obj.session.workout}}</td>
+                <td>{{session_obj.session.state}}</td>
+            </tr>
+        </tbody>
+    </table>
 </div>
+

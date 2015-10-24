@@ -36,14 +36,14 @@
             }
         },
         "sessions": {
-            "$user_id": {
-                ".validate": "root.child('users_public').hasChild($user_id)",
-                ".write": "$user_id === auth.uid",
-                ".read": "$user_id === auth.uid",
-                "$trainer_id": {
-                    ".validate": "root.child('trainers').hasChild($trainer_id)",
-                    ".write": "$trainer_id === auth.uid",
-                    ".read": "$trainer_id === auth.uid"
+            "$session_id": {
+                ".read": "auth.uid === data.child('trainer').val() || auth.uid === data.child('trainee').val()",
+                ".write": "auth.uid === data.child('trainer').val() || auth.uid === data.child('trainee').val()",
+                "trainer": {
+                    ".write": "auth !== null && !data.exists()"
+                },
+                "trainee": {
+                    ".write": "auth !== null && !data.exists() && newData.val() === auth.uid"
                 }
             }
         },

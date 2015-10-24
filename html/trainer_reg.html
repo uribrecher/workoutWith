@@ -1,0 +1,22 @@
+<ng-include src="'html/nav_bar.html'">
+</ng-include>
+<div class="jumbotron" ng-if="user.public.avatar" background-image-directive="{{user.public.avatar}}" min-height="300px">
+    <h1>trainer profile</h1>
+</div>
+
+<div class="container">
+    <form name="trainerForm" role="form" ng-submit="update_trainer(trainerForm.$valid)" novalidate>
+        <div class="form-group has-feedback" ng-class="{'has-error': trainerForm.address.$invalid, 'has-success': trainerForm.address.$valid}">
+            <input type="text" class="form-control" placeholder="address" ng-autocomplete="city" details="" options="{}" ng-model="trainer.public.address"/>
+        </div>
+        <div class="form-group">
+            <label for="description">trainer description:</label>
+            <textarea class="form-control" id="description" ng-model="trainer.public.description"></textarea>
+        </div>
+        <!-- add cover photo upload button -->
+        <div class="form-group">
+        </div>
+          
+        <button type="submit" class="btn btn-primary" ng-disabled="trainerForm.$invalid">update profile</button>
+    </form>
+</div>
