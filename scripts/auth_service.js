@@ -10,6 +10,7 @@
         self.fb_user = {
             private: null,
             public: null,
+            trainer: null,
             uid: null
         };
         
@@ -28,8 +29,10 @@
                 {                   
                     var public_user_ref = root_ref.child("users_public").child(authdata.uid);
                     var private_user_ref = root_ref.child("users_private").child(authdata.uid);
+                    var trainer_ref = root_ref.child("trainers").child(authdata.uid);
                     self.fb_user.private = $firebaseObject(private_user_ref);
                     self.fb_user.public = $firebaseObject(public_user_ref);
+                    self.fb_user.trainer = $firebaseObject(trainer_ref);
                     self.fb_user.uid = authdata.uid;
 
                     // fill some default values from the authdata when necessary
@@ -66,6 +69,10 @@
                 [self.fb_user.public.$save(),
                 self.fb_user.private.$save()]);
         };
+ 
+        self.update_trainer = function() {
+            return self.fb_user.trainer.$save();
+        }; 
         
         self.set_signup_func = function(signup) {
             signup_func = signup;

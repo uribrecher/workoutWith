@@ -5,18 +5,25 @@
 </div>
 
 <div class="container">
-    <form name="trainerForm" role="form" ng-submit="update_trainer(trainerForm.$valid)" novalidate>
-        <div class="form-group has-feedback" ng-class="{'has-error': trainerForm.address.$invalid, 'has-success': trainerForm.address.$valid}">
-            <input type="text" class="form-control" placeholder="address" ng-autocomplete="city" details="" options="{}" ng-model="trainer.public.address"/>
-        </div>
-        <div class="form-group">
-            <label for="description">trainer description:</label>
-            <textarea class="form-control" id="description" ng-model="trainer.public.description"></textarea>
+    <form class="form-horizontal" name="trainerForm" role="form" ng-submit="update_trainer(trainerForm.$valid)" novalidate>
+        <div class="form-group has-feedback" ng-class="{'has-error': trainerForm.location.$invalid, 'has-success': trainerForm.location.$valid}">
+            <label class="control-label col-xs-3">address</label>
+            <div class="col-xs-9">
+                <input type="text" class="form-control" placeholder="address" ng-autocomplete="location" details="" options="{}" ng-model="user.trainer.location"/>
+            </div>
         </div>
         <!-- add cover photo upload button -->
         <div class="form-group">
+            <label class="control-label col-xs-3">workout</label>
+            <div class="col-xs-9">
+                <select class="form-control" id="workout" ng-model="user.trainer.workout" ng-options="workout for (workout, desc) in workout_types">
+                </select>
+            </div>
         </div>
-          
-        <button type="submit" class="btn btn-primary" ng-disabled="trainerForm.$invalid">update profile</button>
+        <div class="form-group">
+            <div class="col-xs-offset-3 col-xs-9">
+                <button type="submit" class="btn btn-primary" ng-disabled="trainerForm.$invalid">update trainer profile</button>
+            </div>
+        </div>
     </form>
 </div>

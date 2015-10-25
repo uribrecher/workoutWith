@@ -84,7 +84,7 @@
             controller: 'ReviewCtrl',
             resolve: require_auth
           }).
-          when('/trainer_reg', {
+          when('/trainer_register', {
             templateUrl: 'html/trainer_reg.html',
             controller: 'TrainerRegCtrl',
             resolve: require_auth
