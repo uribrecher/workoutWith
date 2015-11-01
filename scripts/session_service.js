@@ -43,6 +43,9 @@
         };
         
         this.send_session_request = function(trainee, trainer, time, workout) {
+            if (trainee === trainer) {
+                return $q.reject("trainer and trainee are the same person");
+            }
             var new_session_ref = sessions_ref.push();
             var trainer_index_ref = sessions_index_ref.child("as_trainer").child(trainer).child(new_session_ref.key());
             var trainee_index_ref = sessions_index_ref.child("as_trainee").child(trainee).child(new_session_ref.key());
@@ -112,6 +115,20 @@
             });
         };
         
+        this.get_all_sessions_of_trainer = function(trainer_id, added_cb, removed_cb) {
+            var session_of_trainer_ref = sessions_index_ref.child('as_trainer').child(trainer_id);
+            
+            session_of_trainer_ref.on('child_added', function(snap) {
+                added_cb(snap.key(), {
+                    session: $firebaseObject(sessions_ref.child(snap.key())),
+                    trainee: $firebaseObject(root_ref.child('users_public').child(snap.val()))
+                })
+            });
+            
+            session_of_trainer_ref.on('child_removed', function(snap) {
+                removed_cb(snap.key());
+            });
+        };
     };
     
     angular.module('mainApp').service("session_service", ['domain', '$q', '$firebaseObject', session_service]);

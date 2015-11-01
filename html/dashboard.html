@@ -5,6 +5,39 @@
 </div>
 
 <div class="container">
+    <div ng-show="trainer_selection.count > 0">
+    <h2>trainer sessions</h2>
+    <div class="btn btn-default" ng-click="reject_selected()">reject selected</div>
+    <div class="btn btn-default" ng-click="confirm_selected()">confirm selected</div>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th class="vert-align col-xs-1">
+                    <input type="checkbox" ng-model="trainer_select_all" ng-click="trainer_check_all()">
+                </th>
+                <th class="col-xs-3">trainee</th>
+                <th class="col-xs-3">time</th>
+                <th class="col-xs-4">workout</th>
+                <th class="col-sx-1">state</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="(session_id, session_obj) in trainer_items">
+                <td class="vert-align"> 
+                    <input type="checkbox" ng-model="trainer_selection.session_ids[session_id]">
+                </td>
+                <td>{{session_obj.trainee.name}}</td>
+                <td>{{session_obj.session.time | date}}</td>
+                <td>{{session_obj.session.workout}}</td>
+                <td>{{session_obj.session.state}}</td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <hr>
+    <br>
+    </div>
+    <h2>trainee sessions</h2>
     <div class="btn btn-default" ng-click="cancel_selected()">cancel selected</div>
     <table class="table table-hover">
         <thead>
@@ -30,5 +63,7 @@
             </tr>
         </tbody>
     </table>
+    
+    
 </div>
 
