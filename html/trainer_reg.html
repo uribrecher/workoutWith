@@ -5,30 +5,36 @@
 </div>
 
 <div class="container">
-    <form class="form" name="trainerForm" role="form" ng-submit="update_trainer(trainerForm.$valid)" novalidate>
+    <form class="form-horizontal" name="trainerForm" role="form" ng-submit="update_trainer(trainerForm.$valid)" novalidate>
         <div class="form-group has-feedback" ng-class="{'has-error': trainerForm.location.$invalid, 'has-success': trainerForm.location.$valid}">
-            <input type="text" class="form-control" placeholder="address" ng-model="user.trainer.location" ng-autocomplete="user.trainer.location" details="" options="{}" />
+            <label class="control-label col-sm-2">address</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" placeholder="address" ng-model="user.trainer.location" ng-autocomplete="user.trainer.location" details="" options="{}" />
+            </div>
         </div>        
         <div class="form-group has-feedback" ng-class="{'has-error': trainerForm.cover.$invalid, 'has-success': trainerForm.cover.$valid}">
-            <input type="file" class="form-control" placeholder="cover photo" ng-model="user.trainer.cover"></input>
-        </div>
-        <div class="row" ng-repeat="(my_workout, my_price) in workout_types">
-            <div class="col-xs-6">
-                <label for="">{{my_workout}}</label>
+            <label class="control-label col-sm-2">cover photo</label>
+            <div class="col-sm-10">
+                <input type="file" class="form-control" placeholder="cover photo" ng-model="user.trainer.cover"></input>
             </div>
-            <div class="col-xs-6">
-                <div class="form-group">
-                    <div class="input-group">
-                        <input type="number" step="0.01" class="form-control" placeholder="price" ng-model="user.trainer.prices[my_workout]"/>
-                    </div>
+        </div> 
+        <div class="form-group" ng-repeat="(my_workout, my_price) in workout_types">
+            <label class="control-label col-sm-2">{{my_workout}}</label>
+            <div class="col-sm-10">
+                <div class="input-group">
+                    <span class="input-group-addon">
+                        <input type="checkbox" aria-label="..." ng-model="prices.enabled[my_workout]">
+                    </span>
+                    <input ng-disabled="!prices.enabled[my_workout]" type="number" step="0.01" class="form-control" placeholder="price" ng-model="user.trainer.prices[my_workout]"/>
                 </div>
             </div>
         </div>
         <div class="form-group">
-            <div>
+            <div class="col-sm-offset-2 col-sm-10">
                 <button type="submit" class="btn btn-primary" ng-disabled="trainerForm.$invalid">update trainer profile</button>
             </div>
         </div>
     </form>
-    <pre>{{user | json}}</pre>
+    <pre>{{user.trainer.prices | json}}</pre>
+    <pre>{{prices.enabled | json}}</pre>
 </div>

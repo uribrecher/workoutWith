@@ -18,7 +18,11 @@
             $scope.form_time.setMinutes(0);
             
             $scope.form_workout = "none";
-            $scope.send_session_request = function() {
+            $scope.send_session_request = function(valid) {
+                if (!valid) {
+                    return;
+                }
+                
                 if (!$scope.user.uid) {
                     auth_service.open_auth_modal();
                     return;

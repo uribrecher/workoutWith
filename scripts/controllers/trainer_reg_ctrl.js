@@ -14,24 +14,36 @@
           
           $scope.workout_types = $firebaseObject(workout_types_ref);
           $scope.user = auth_service.get_fb_user();
-          $scope.form_location = $scope.user.trainer.location;
+          //$scope.form_location = $scope.user.trainer.location;
+          $scope.prices = {
+              enabled: {
+              }
+          };
           
           workout_types_ref.on("child_added", function(snap) {
               $scope.user.trainer.$ref().child('prices').child(snap.key()).transaction(function(price_snap) {
                   if (price_snap === null) {
                       return 0.0;
                   }
+                  $scope.prices.enabled[snap.key()] = (price_snap !== null && price_snap !== 0.0);
                   
                   return;
               });
           });
-                    
+            
+          
           $scope.update_trainer = function(valid_form) {
               if (!valid_form)
               {
                   return;
               }
   
+              for (var workout in $scope.prices.enabled) {
+                  if (!$scope.prices.enabled[workout] ||
+                       $scope.user.trainer.prices[workout] === 0) {
+                      $scope.user.trainer.prices[workout] = null;
+                  }
+              }
               auth_service.update_trainer().then(function() {
                    $location.path('trainers');
               });
